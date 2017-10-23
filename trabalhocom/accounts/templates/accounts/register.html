@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+{% block content %}
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="{% url 'core:home' %}">Home</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                    data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#formulario">Cadastrar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Header -->
+    <header class="masthead">
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-heading">Seja Bem-Vindo(a)!</div>
+                <div class="intro-lead-in">Faça seu cadastro e desfrute das funcionalidades do site</div>
+                <a class="btn btn-xl js-scroll-trigger" href="#formulario">Iniciar Cadastro!</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sobre -->
+    <section id="formulario">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Formulário de Cadastro</h2>
+                    <br>
+                </div>
+            </div>
+
+            <form  method="post">
+                {% csrf_token %}
+                {{ form.errors }}
+
+                <div class="form-row justify-content-center">
+                    <div class="form-group col-md-10 ">
+                        <label>Email</label>
+{#                        <input type="email" class="form-control">#}
+                            {{ form.email }}
+
+                    </div>
+                </div>
+                <div class="form-row justify-content-center">
+                    <div class="form-group col-md-5">
+                        <label>Senha</label>
+{#                        <input type="password" name="password" class="form-control">#}
+                            {{ form.password }}
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label>Confirme a senha</label>
+{#                        <input type="password" name="password" class="form-control">#}
+                            {{ form.password2 }}
+                    </div>
+                </div>
+                <div class="form-row justify-content-center">
+                    <div class="form-group col-md-5">
+                        <label>Usuário</label>
+{#                        <input type="text" name="username" class="form-control">#}
+                            {{ form.username }}
+                    </div>
+                    <div class="form-group col-md-5">
+                        <div class="form-group col-md-5">
+                            <label>Sexo</label>
+    {#                        <input type="text" name="" class="form-control">#}
+                                {{ form.sexo }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row justify-content-center">
+                    <div class="form-group col-md-5">
+                        <label>CPF</label>
+{#                        <input type="text" name="" class="form-control">#}
+                            {{ form.cpf }}
+                    </div>
+                     <div class="form-group col-md-5">
+                        <label>Telefone</label>
+{#                        <input type="text" name="" class="form-control">#}
+                          {{ form.telefone }}
+                    </div>
+                </div>
+
+                <div class="form-row justify-content-center">
+                    <div class="form-group col-md-3">
+                        <label>Rua</label>
+{#                        <input type="text" name="" class="form-control">#}
+                            {{ form.rua }}
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Número</label>
+{#                        <input type="text" name="" class="form-control">#}
+                            {{ form.numero }}
+                    </div>
+                     <div class="form-group col-md-3">
+                        <label>Bairro</label>
+{#                        <input type="text" name="" class="form-control">#}
+                            {{ form.bairro }}
+                    </div>
+                </div>
+
+                <div class="form-row justify-content-center">
+                    <div class="form-group col-md-5">
+                        <label>Estado</label>
+{#                        <input type="text" name="" class="form-control">#}
+                            {{ form.estado }}
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label>Cidade</label>
+{#                        <input type="text" name="" class="form-control">#}
+                            {{ form.cidade }}
+                    </div>
+                </div>
+                <div class="form-row justify-content-center">
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+{% endblock %}
