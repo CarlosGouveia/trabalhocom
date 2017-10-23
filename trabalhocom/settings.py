@@ -25,7 +25,7 @@ SECRET_KEY = 'sf_je2#f^tz6cde!rqq8$kq74!cvkid=o=8$p*nq&f-7b1w@(x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'trabalhocom.pythonanywhere.com']
 
 
 # Application definition
