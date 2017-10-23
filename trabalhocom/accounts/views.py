@@ -32,7 +32,7 @@ def register(request):
         form = RegisterForm(request.POST)
         if form.is_valid():
             user = form.save()
-            user = authenticate(email=user.email, password=form.cleaned_data['password'])
+            user = authenticate(email=user.email, password=form.cleaned_data['password1'])
             login(request, user)
             return redirect('core:home')
     else:
