@@ -4,8 +4,18 @@
     <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ignoredPackages">
         <value>
+<<<<<<< HEAD
           <list size="1">
             <item index="0" class="java.lang.String" itemvalue="psycopg2" />
+=======
+          <list size="6">
+            <item index="0" class="java.lang.String" itemvalue="dj-database-url" />
+            <item index="1" class="java.lang.String" itemvalue="psycopg2" />
+            <item index="2" class="java.lang.String" itemvalue="olefile" />
+            <item index="3" class="java.lang.String" itemvalue="whitenoise" />
+            <item index="4" class="java.lang.String" itemvalue="gunicorn" />
+            <item index="5" class="java.lang.String" itemvalue="Pillow" />
+>>>>>>> c7b1ef33bade1e0f813b81aae1ccd26f882fb2b1
           </list>
         </value>
       </option>
