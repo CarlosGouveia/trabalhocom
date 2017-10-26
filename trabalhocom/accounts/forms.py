@@ -48,7 +48,15 @@ class RegisterForm(UserCreationForm):
 
 class EditAccountForm(forms.ModelForm):
 
+    username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+    telefone = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+    rua = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+    numero = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+    bairro = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+    cidade = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+    estado = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+
     class Meta:
         model = User
-        # fields = ['email', 'username']
-        fields = '__all__'
+        fields = ['username', 'telefone', 'rua', 'numero', 'bairro', 'estado', 'cidade']
+        # fields = '__all__'
