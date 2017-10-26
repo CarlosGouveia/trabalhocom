@@ -28,6 +28,22 @@
                 </div>
             </div>
 
+{#            <form  method="post">#}
+{#            {% csrf_token %}#}
+{#            <fieldset>#}
+{#                {{ form.non_fiel_errors }}#}
+{#                {% for field in form %}#}
+{#                <div class="form-row justify-content-center">#}
+{#                    {{ field.label_tag }}#}
+{#                    {{ field }}#}
+{#                    {{ field.errors }}#}
+{#                </div>#}
+{#                {% endfor %}#}
+{#                <div class="form-row justify-content-center">#}
+{#                    <button type="submit" class="btn btn-primary">Cadastrar</button>#}
+{#                </div>#}
+{#            </fieldset>#}
+{#        </form>#}
             <form  method="post">
                 {% csrf_token %}
                 {{ form.errors }}
@@ -37,6 +53,7 @@
                         <label>Email</label>
 {#                        <input type="email" class="form-control">#}
                             {{ form.email }}
+                        <span class="helptext">{{ form.subject.help_text }}</span>
 
                     </div>
                 </div>
@@ -54,12 +71,20 @@
                 </div>
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-5">
-                        <label>Usuário</label>
+                        <label>Nome Completo</label>
 {#                        <input type="text" name="username" class="form-control">#}
                             {{ form.username }}
                     </div>
-
-          
+                    <div class="form-group col-md-5">
+                        <label>Sexo</label>
+{#                        <input type="text" name="username" class="form-control">#}
+{#                            {{ form.sexo }}#}
+                        <select class="form-control" name="sexo">
+                            <option value="" selected>Selecione o sexo...</option>
+                            <option value="M">Masculino</option>
+                            <option value="F">Feminino</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="form-row justify-content-center">
@@ -69,27 +94,30 @@
                             {{ form.cpf }}
                     </div>
                      <div class="form-group col-md-5">
-                        <label>Telefone</label>
+                        <label>RG</label>
 {#                        <input type="text" name="" class="form-control"> pattern="\(\d{2}\)\d{4}-\d{4}"#}
-                          {{ form.telefone }}
+                          {{ form.rg }}
                     </div>
                 </div>
 
+{#                <div class="form-row justify-content-center">#}
+{#                    <div class="form-group col-md-5">#}
+{#                        <label>Data de nascimento</label>#}
+{#                        <input type="text" name="" class="form-control">#}
+{#                            {{ form. }}#}
+{#                    </div>#}
+{#                </div>#}
+
                 <div class="form-row justify-content-center">
-                    <div class="form-group col-md-3">
-                        <label>Rua</label>
+                    <div class="form-group col-md-5">
+                        <label>Data de Nascimento</label>
 {#                        <input type="text" name="" class="form-control">#}
-                            {{ form.rua }}
+                            {{ form.dt_nasc }}
                     </div>
-                    <div class="form-group col-md-4">
-                        <label>Número</label>
-{#                        <input type="text" name="" class="form-control">#}
-                            {{ form.numero }}
-                    </div>
-                     <div class="form-group col-md-3">
-                        <label>Bairro</label>
-{#                        <input type="text" name="" class="form-control">#}
-                            {{ form.bairro }}
+                     <div class="form-group col-md-5">
+                        <label>Telefone</label>
+{#                        <input type="text" name="" class="form-control"> pattern="\(\d{2}\)\d{4}-\d{4}"#}
+                          {{ form.telefone }}
                     </div>
                 </div>
 
@@ -105,6 +133,25 @@
                             {{ form.cidade }}
                     </div>
                 </div>
+
+                <div class="form-row justify-content-center">
+                    <div class="form-group col-md-3">
+                        <label>Bairro</label>
+{#                        <input type="text" name="" class="form-control">#}
+                            {{ form.bairro }}
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Rua</label>
+{#                        <input type="text" name="" class="form-control">#}
+                            {{ form.rua }}
+                    </div>
+                     <div class="form-group col-md-3">
+                        <label>Número</label>
+{#                        <input type="text" name="" class="form-control">#}
+                            {{ form.numero }}
+                    </div>
+                </div>
+
                 <div class="form-row justify-content-center">
                     <button type="submit" class="btn btn-primary">Registrar</button>
                 </div>

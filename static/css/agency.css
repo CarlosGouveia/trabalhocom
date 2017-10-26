@@ -51,6 +51,33 @@ section {
   background: #fed136;
   text-shadow: none; }
 
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #999; opacity:1; filter:alpha(opacity=100);
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #999; opacity:1; filter:alpha(opacity=100);
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #999; opacity:1; filter:alpha(opacity=100);
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #999; opacity:1; filter:alpha(opacity=100);
+}
+.teste::-webkit-input-placeholder {
+   color: #cc2738; opacity:1; filter:alpha(opacity=100);
+}
+.teste:-moz-placeholder {
+   color: #cc2738;
+}
+.teste::-moz-placeholder {
+   color: #cc2738;
+}
+.teste:-ms-input-placeholder {
+ color: #cc2738;
+}
+
 img::selection {
   background: transparent; }
 
