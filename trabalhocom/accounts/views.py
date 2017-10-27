@@ -33,13 +33,13 @@ def edit(request):
     template_name = 'accounts/edit.html'
     context = {}
     if request.method == 'POST':
-        form = EditAccountForm(request.POST, instance=request.user)
+        form = EditAccountForm(request.POST, request.FILES, instance=request.user)
         if form.is_valid():
             form.save()
             form = EditAccountForm(instance=request.user)
             context['success'] = True
             messages.success(request, 'Cadastro atualizado com sucesso!')
-            return redirect('accounts:dashboard')
+            return redirect('accounts:edit')
     else:
         form = EditAccountForm(instance=request.user)
     context['form'] = form

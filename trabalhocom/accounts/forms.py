@@ -12,33 +12,20 @@ class login_form(AuthenticationForm):
 
 
 class RegisterForm(UserCreationForm):
-    # SEXO_CHOICES = (
-    #     (u'M', u'Masculino'),
-    #     (u'F', u'Feminino'),
-    # )
 
     email = forms.EmailField(widget=forms.EmailInput(attrs={'autofocus': True, 'class': 'form-control'}))
     password1 = forms.CharField(strip=False, widget=forms.PasswordInput(attrs={'class': 'form-control'}))
     password2 = forms.CharField(strip=False, widget=forms.PasswordInput(attrs={'class': 'form-control'}))
     username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     telefone = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
-    cpf = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control cpf-mask','placeholder' : '999.999.999-99'}))
+    cpf = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder' : '999.999.999-99'}))
     rg = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
-    # sexo = forms.ChoiceField(choices=SEXO_CHOICES, widget=forms.Select(attrs={'class': 'form-control'}))
     dt_nasc = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     rua = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     numero = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     bairro = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     cidade = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     estado = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
-
-
-    # def clean_password2(self):
-    #     password1 = self.cleaned_data.get("password1")
-    #     password2 = self.cleaned_data.get("password2")
-    #     if password1 and password2 and password1 != password2:
-    #         raise forms.ValidationError('A confirmação não está correta')
-    #     return password2
 
     def save(self, commit=True):
         user = super(RegisterForm, self).save(commit=False)
@@ -56,13 +43,15 @@ class EditAccountForm(forms.ModelForm):
 
     username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     telefone = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+
     rua = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     numero = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     bairro = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     cidade = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     estado = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+    image = forms.ImageField(widget=forms.FileInput(attrs={'class': 'form-control'}))
+
 
     class Meta:
         model = User
-        fields = ['username', 'telefone', 'rua', 'numero', 'bairro', 'estado', 'cidade']
-        # fields = '__all__'
+        fields = ['username', 'telefone', 'rua', 'numero', 'bairro', 'estado', 'cidade', 'image']
