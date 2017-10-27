@@ -141,7 +141,7 @@ MEDIA_ROOT = '/media/'
 
 #E-mails
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-DEFAULT_FROM_EMAIL = 'Nome <trabalhocom.contato@gmail.com>'
+DEFAULT_FROM_EMAIL = 'Suporte -  TrabalhoCom <trabalhocom.contato@gmail.com>'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'trabalhocom.contato@gmail.com'
