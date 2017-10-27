@@ -13,22 +13,25 @@ class User(AbstractBaseUser, PermissionsMixin):
     )
 
     email = models.EmailField('E-mail', unique=True)
-    username = models.CharField('Nome completo', max_length=100,default=True)
+    username = models.CharField('Nome completo', max_length=100, default=True)
     telefone = models.CharField('Telefone', max_length=15, default=True)
     cpf = models.CharField('CPF', max_length=14, unique=True, default=True)
     rg = models.CharField('RG', max_length=10, unique=True, default=True)
-    dt_nasc = models.CharField('Data de Nascimento',max_length=10, default=True)
-    sexo = models.CharField('Sexo', max_length=1, null=False,default=True)
-    rua = models.CharField('Rua', max_length=50,default=True,
-                           validators=[validators.RegexValidator(re.compile('[A-Za-z]'),
-                                                                 'A rua só deve conter letras.')])
-    numero = models.CharField('Número', max_length=15,
-                              default=True,
-                              validators=[validators.RegexValidator(re.compile('[0-9]'),
-                                                                    'Favor digitar somente valores inteiros')])
-    bairro = models.CharField('Bairro', max_length=50,default=True)
-    cidade = models.CharField('Cidade', max_length=50,default=True)
-    estado = models.CharField('Estado', max_length=50,default=True)
+    dt_nasc = models.CharField('Data de Nascimento', max_length=10, default=True)
+    sexo = models.CharField('Sexo', max_length=1, null=False, default=True)
+    rua = models.CharField(
+        'Rua', max_length=50, default=True,
+         validators=[validators.RegexValidator(re.compile('[A-Za-z]'), 'A rua só deve conter letras.')])
+    numero = models.CharField(
+        'Número', max_length=15,
+         default=True,
+         validators=[validators.RegexValidator(re.compile('[0-9]'), 'Favor digitar somente valores inteiros')])
+
+    bairro = models.CharField('Bairro', max_length=50, default=True)
+    cidade = models.CharField('Cidade', max_length=50, default=True)
+    estado = models.CharField('Estado', max_length=50, default=True)
+
+    image = models.ImageField(upload_to='accounts/images', verbose_name='Imagem', blank=True)
 
     is_active = models.BooleanField('Está ativo?', blank=True, default=True)
     is_staff = models.BooleanField('É da equipe?', blank=True, default=False)
