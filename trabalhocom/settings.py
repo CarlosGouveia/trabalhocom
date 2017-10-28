@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     
     'trabalhocom.core',
     'trabalhocom.accounts',
+    'trabalhocom.services',
 ]
 
 MIDDLEWARE = [

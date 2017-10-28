@@ -22,6 +22,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^', include('trabalhocom.core.urls', namespace='core')),
     url(r'^conta/', include('trabalhocom.accounts.urls', namespace='accounts')),
+    url(r'^meus-servicos/', include('trabalhocom.services.urls', namespace='services')),
     url(r'^admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

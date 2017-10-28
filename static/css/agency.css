@@ -178,12 +178,18 @@ header.masthead {
       margin-bottom: 25px;
       font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
     header.masthead .intro-text .intro-heading {
-      font-size: 75px;
+      font-size: 40px;
       font-weight: 700;
       line-height: 75px;
       margin-bottom: 50px;
       font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
       text-transform: uppercase; } }
+
+@media (max-width: 200px) {
+    header.masthead .intro-heading {
+      font-size: 10px;
+    }
+}
 
 .service-heading {
   margin: 15px 0;

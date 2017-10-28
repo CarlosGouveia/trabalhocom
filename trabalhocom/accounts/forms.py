@@ -80,7 +80,7 @@ class EditAccountForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['username', 'telefone', 'rua', 'numero', 'bairro', 'estado', 'cidade']
+        fields = ['username', 'telefone', 'rua', 'numero', 'bairro', 'estado', 'cidade', 'image']
         # fields = '__all__'
 
 
