@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, SetPasswordForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, SetPasswordForm, PasswordChangeForm
 # from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model, password_validation
 from .models import PasswordReset
@@ -125,3 +125,24 @@ class AlteraSenha(SetPasswordForm):
         if commit:
             self.user.save()
         return self.user
+
+
+class EditarSenha(AlteraSenha):
+    error_messages = dict(SetPasswordForm.error_messages, **{
+        'password_incorrect': ("Sua senha antiga está incorreta. Tente novamente."),
+    })
+    old_password = forms.CharField(
+        strip=False,
+        widget=forms.PasswordInput(attrs={'autofocus': True, 'class': 'form-control'}),
+    )
+
+    field_order = ['old_password', 'new_password1', 'new_password2']
+
+    def clean_old_password(self):
+        old_password = self.cleaned_data["old_password"]
+        if not self.user.check_password(old_password):
+            raise forms.ValidationError(
+                self.error_messages['password_incorrect'],
+                code='password_incorrect',
+            )
+        return old_password
