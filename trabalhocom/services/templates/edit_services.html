@@ -2,7 +2,7 @@
 {% block dashboard_content %}
 
     <section>
-        <!-- formulario de atualização-->
+        <!-- formulario de cadastro de serviços-->
         <div class="container">
 
             <div class="row text-center">
@@ -27,12 +27,12 @@
             </div>
             <div class="row justify-content-md-center">
                 <div class="col-md-12 text-center">
-                    <h2 class="section-heading">Atualizar Cadastro</h2>
+                    <h2 class="section-heading">Atualizar Serviços</h2>
                     <br>
                 </div>
             </div>
 
-            <form method="post" enctype="multipart/form-data">
+            <form method="post">
                 {% csrf_token %}
 
                 {{ form.errors }}
@@ -42,52 +42,56 @@
                     <div class="form-group col-md-12">
 
                         <div class="form-row justify-content-md-center">
-                            <div class="form-group col-md-5">
-                                <label>Usuário</label>
-                                {{ form.username }}
+                            <div class="form-group col-md-3 justify-content-md-start">
+                                <label>Descrição/Serviço</label>
+{#                                {{ form.descricao_servico }}#}
                             </div>
-                            <div class="form-group col-md-5">
-                                <label>Telefone</label>
-                                {{ form.telefone }}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group col-md-12">
-                        <div class="form-row justify-content-md-center">
-                            <div class="form-group col-md-5">
-                                <label>Estado</label>
-                                {{ form.estado }}
-                            </div>
-                            <div class="form-group col-md-5">
-                                <label>Cidade</label>
-                                {{ form.cidade }}
+                            <div class="form-group col-md-6">
+{#                                <label>Descrição/Serviço</label>#}
+                                {{ form.descricao_servico }}
                             </div>
                         </div>
                     </div>
                     <div class="form-group col-md-12">
                         <div class="form-row justify-content-md-center">
-                            <div class="form-group col-md-5">
-                                <label>Rua</label>
-                                {{ form.rua }}
+                            <div class="form-group col-md-3 justify-content-md-start">
+                                <label>Tempo/Experiência</label>
+{#                                {{ form.tempo_experiencia }}#}
                             </div>
-                            <div class="form-group col-md-5">
-                                <label>Número</label>
-                                {{ form.numero }}
+                            <div class="form-group col-md-3">
+{#                                <label>Tempo/Experiência</label>#}
+                                {{ form.tempo_experiencia }}
+                            </div>
+                            <div class="form-group col-md-3">
+{#                                <label>Cidade</label>#}
+                                <select class="form-control" name="unid_tempo">
+                                    <option value="" selected>Selecione ...</option>
+                                    <option value="ME">Mês(es)</option>
+                                    <option value="AN">Ano(s)</option>
+                                </select>
                             </div>
                         </div>
                     </div>
                     <div class="form-group col-md-12">
                         <div class="form-row justify-content-md-center">
-                            <div class="form-group col-md-5">
-                                <label>Bairro</label>
-                                {{ form.bairro }}
+                            <div class="form-group col-md-3">
+                                <label>Descrição/Experiência</label>
+{#                                {{ form.descricao_exp }}#}
                             </div>
-                            <div class="form-group col-md-5">
-                                <label>Foto/Perfil</label>
-                                {{ form.image }}
+                            <div class="form-group col-md-6">
+{#                                <label>Descrição/Experiência</label>#}
+                                {{ form.descricao_exp }}
                             </div>
                         </div>
                     </div>
+{#                    <div class="form-group col-md-12">#}
+{#                        <div class="form-row justify-content-md-center">#}
+{#                            <div class="form-group col-md-9">#}
+{#                                <label>Valor</label>#}
+{#                                {{ form.valor }}#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
 
                     <div class="form-group col-md-12">
                         <div class="form-row justify-content-md-center">
@@ -97,6 +101,7 @@
                 </div>
 
             </form>
+
         </div>
     </section>
 

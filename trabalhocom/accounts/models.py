@@ -1,6 +1,6 @@
 import re
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser,PermissionsMixin, UserManager
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, UserManager
 from django.core import validators
 from django.conf import settings
 import datetime

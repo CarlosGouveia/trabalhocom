@@ -11,8 +11,34 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#formulario">Cadastrar</a>
+                        <a class="nav-link js-scroll-trigger" href="{% url 'core:home' %}#about">Sobre</a>
                     </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="{% url 'accounts:dashboard' %}">Painel</a>
+                        </li>
+                    {% endif %}
+
+
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{% url 'core:home' %}#team">Equipe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{% url 'core:home' %}#contact">Contato</a>
+                    </li>
+
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="{% url 'accounts:logout' %}">Sair</a>
+                        </li>
+
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="{% url 'accounts:register' %}">Cadastrar</a>
+                        </li>
+                    {% endif %}
+
+
                 </ul>
             </div>
         </div>

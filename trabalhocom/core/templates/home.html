@@ -13,6 +13,13 @@
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#about">Sobre</a>
                     </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="{% url 'accounts:dashboard' %}">Painel</a>
+                        </li>
+                    {% endif %}
+
+
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#team">Equipe</a>
                     </li>
@@ -20,16 +27,15 @@
                         <a class="nav-link js-scroll-trigger" href="#contact">Contato</a>
                     </li>
 
-
                     {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="{% url 'accounts:dashboard' %}">Painel</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="{% url 'accounts:logout' %}">Sair</a>
                         </li>
 
                     {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="{% url 'accounts:register' %}">Cadastrar</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="" data-toggle="modal" data-target="#login">Login</a>
                         </li>
@@ -105,22 +111,49 @@
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col-md-6">
-            <span class="fa-stack fa-4x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-thumb-tack fa-stack-1x fa-inverse"></i>
-            </span>
-                    <h4 class="service-heading">Cadastrar Serviço</h4>
-                    <p class="text-muted">Obtenha uma renda extra oferecendo seus serviços.</p>
-                </div>
-                <div class="col-md-6">
-            <span class="fa-stack fa-4x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-search fa-stack-1x fa-inverse"></i>
-            </span>
+                {% if user.is_authenticated %}
+                     <div class="col-md-6">
+                        <a class="btn js-scroll-trigger" href="{% url 'services:register_services' %}">
+                            <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fa fa-thumb-tack fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                        <h4 class="service-heading">Cadastrar Serviço</h4>
+                        <p class="text-muted">Obtenha uma renda extra oferecendo seus serviços.</p>
+                    </div>
+                    <div class="col-md-6">
+                    <a class="btn js-scroll-trigger" href="{% url 'services:search-professionals' %}">
+                        <span class="fa-stack fa-4x">
+                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fa fa-search fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
                     <h4 class="service-heading">Procurar Profissionais</h4>
                     <p class="text-muted">Encontre o profissional mais perto de você.</p>
                 </div>
+                {% else %}
+                    <div class="col-md-6">
+                        <a class="btn js-scroll-trigger" href="" data-toggle="modal" data-target="#login">
+                            <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fa fa-thumb-tack fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                        <h4 class="service-heading">Cadastrar Serviço</h4>
+                        <p class="text-muted">Obtenha uma renda extra oferecendo seus serviços.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <a class="btn js-scroll-trigger" href="" data-toggle="modal" data-target="#login">
+                            <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fa fa-search fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                        <h4 class="service-heading">Procurar Profissionais</h4>
+                        <p class="text-muted">Encontre o profissional mais perto de você.</p>
+                    </div>
+                {% endif %}
             </div>
         </div>
     </section>
