@@ -24,7 +24,7 @@ def login_view(request):
     else:
         return redirect('/')
 
-    return render(request, 'home.html')
+    # return render(request, 'home.html')
 
 
 def password_reset(request):
@@ -94,8 +94,12 @@ def edit_password(request):
     if request.method == 'POST':
         form = EditarSenha(data=request.POST, user=request.user)
         if form.is_valid():
-            form.save()
+            user = form.save()
             context['sucess'] = True
+            user = authenticate(email=user.email, password=form.cleaned_data['new_password1'])
+            login(request, user)
+            messages.success(request, 'Senha alterada com sucesso!')
+            return redirect('accounts:edit_password')
     else:
         form = EditarSenha(user=request.user)
     context['form'] = form
