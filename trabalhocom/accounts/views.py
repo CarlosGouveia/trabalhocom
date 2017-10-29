@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, get_user_model
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
 from django.contrib import messages
-from .forms import RegisterForm, EditAccountForm, PasswordResetForm, AlteraSenha
+from .forms import RegisterForm, EditAccountForm, PasswordResetForm, AlteraSenha, EditarSenha
 from .models import PasswordReset
 import json
 
@@ -85,4 +85,18 @@ def register(request):
     context = {
         'form': form
     }
+    return render(request, template_name, context)
+
+@login_required
+def edit_password(request):
+    template_name = 'accounts/edit_password.html'
+    context = {}
+    if request.method == 'POST':
+        form = EditarSenha(data=request.POST, user=request.user)
+        if form.is_valid():
+            form.save()
+            context['sucess'] = True
+    else:
+        form = EditarSenha(user=request.user)
+    context['form'] = form
     return render(request, template_name, context)
