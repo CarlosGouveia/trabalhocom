@@ -5,7 +5,7 @@ class CreateService(models.Model):
     valor = models.FloatField('Valor')
     descricao = models.TextField('Descrição', max_length=400)
     data_inicio = models.DateField()
-   #categoria =
+   #categoria =git
 
     class Meta:
         verbose_name = 'Novo serviço'
