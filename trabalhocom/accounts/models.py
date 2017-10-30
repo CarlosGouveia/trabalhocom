@@ -45,7 +45,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ['username'] #utilizado pra criaçao de superusuario
 
     def __str__(self):  #se tem nome retorna nome
-        return self.name or self.username
+        return self.username
 
     def get_short_name(self): #para funcionamento do admin
         return self.email

@@ -4,10 +4,30 @@
     <section>
         <!-- Listar meus serviços-->
         <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <!-- Mensagem de sucesso -->
+                    {% if messages %}
+                        <div class="intro-text">
+                            <div class="row">
+                                {% for message in messages %}
+                                    <div class="col-lg-12">
+                                        <div class="alert alert-success alert-dismissible">
+                                            <button class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span>
+                                            </button>
+                                            {{ message }}
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
 
             <div class="row justify-content-md-center">
                 <div class="col-md-12 text-center">
-                    <h2 class="section-heading">Meus Serviços</h2>
+                    <h2 class="section-heading">Atualizar Serviço</h2>
                     <br>
                 </div>
             </div>
@@ -17,7 +37,7 @@
                 <div class="row justify-content-md-center">
                     <div class="col-md-12 text-center">
                         <h4 class="section-subheading">
-                            <a href="#" title="">{{ servico.descricao_servico }}</a>
+                            <a href="{% url 'services:edit_services' pk=servico.pk %}" title="">{{ servico.descricao_servico }}</a>
                         </h4>
 {#                        {{ servico.descricao_exp|linebreaks }}#}
                     </div>

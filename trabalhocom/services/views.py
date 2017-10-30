@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .forms import FormCadastroSevico, AtualizarServicoForm
 from django.contrib import messages
@@ -6,14 +6,14 @@ from .models import Service
 
 @login_required
 def myservices(request):
-    servicos = Service.objects.all()
+    servicos = Service.objects.filter(usuario_id=request.user)
     template_name = 'myservices.html'
     context = {'servicos': servicos}
     return render(request, template_name, context)
 
 @login_required
 def myservices_list_update(request):
-    servicos = Service.objects.all()
+    servicos = Service.objects.filter(usuario_id=request.user)
     template_name = 'myservices_list_update.html'
     context = {'servicos': servicos}
     return render(request, template_name, context)
@@ -40,20 +40,21 @@ def register_services(request):
     context['form'] = form
     return render(request, template_name, context)
 
-def edit_services(request):
-
-    template_name = 'edit_services.html'
+def edit_services(request, pk):
+    servico = get_object_or_404(Service, pk=pk)
     context = {}
     if request.method == 'POST':
-        form = AtualizarServicoForm(request.POST, instance=request.user)
-        print(form)
+        form = AtualizarServicoForm(request.POST, instance=servico)
         if form.is_valid():
-            form.save()
-            form = AtualizarServicoForm(instance=request.user)
+            servico = form.save(commit=False)
+            servico.usuario = request.user
+            servico.save()
+            # form = AtualizarServicoForm(instance=servico)
             context['success'] = True
-            messages.success(request, 'Servico atualizado com sucesso!')
-            return redirect('services:edit_services')
+            messages.success(request, 'Serviço atualizado com sucesso!')
+            return redirect('services:myservices_list_update')
     else:
-        form = AtualizarServicoForm(instance=request.user)
+        form = AtualizarServicoForm(instance=servico)
     context['form'] = form
+    template_name = 'edit_services.html'
     return render(request, template_name, context)
