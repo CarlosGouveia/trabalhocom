@@ -18,10 +18,11 @@ def myservices_list_update(request):
     context = {'servicos': servicos}
     return render(request, template_name, context)
 
-@login_required
 def search_professionals(request):
+    servicos = Service.objects.all()
     template_name = 'search_professionals.html'
-    return render(request, template_name)
+    context = {'servicos': servicos}
+    return render(request, template_name, context)
 
 @login_required
 def register_services(request):

@@ -16,7 +16,7 @@ class FormCadastroSevico(forms.ModelForm):
         servico.usuario = request.user
         servico.descricao_servico = data['descricao_servico']
         servico.tempo_experiencia = data['tempo_experiencia']
-        servico.TEMPO_CHOICES = data['unid_tempo']
+        servico.unid_tempo = data['unid_tempo']
         servico.descricao_exp = data['descricao_exp']
         # servico.valor = data['valor']
 

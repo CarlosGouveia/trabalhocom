@@ -35,20 +35,22 @@
 
     <div class="row" style="background-color: whitesmoke">
         <div class="col-md-3 justify-content-md-center">
-            <br><br><br><br><br><br>
-            <div class="team-member">
-                {% if user.image %}
-                    <img class="mx-auto rounded-circle" src="{{ user.image.url }}" alt=""/>
-                {% else %}
-                    <img class="mx-auto rounded-circle" src="../../../static/img/perfil.png" alt="">
-                {% endif %}
-                <br><br>
-                <h6 style="color: black">{{ user.username }}</h6><br><br>
+            {% block menu_lateral_dashboard %}
+                <br><br><br><br><br><br>
+                <div class="team-member">
+                    {% if user.image %}
+                        <img class="mx-auto rounded-circle" src="{{ user.image.url }}" alt=""/>
+                    {% else %}
+                        <img class="mx-auto rounded-circle" src="../../../static/img/perfil.png" alt="">
+                    {% endif %}
+                    <br><br>
+                    <h6 style="color: black">{{ user.username }}</h6><br><br>
 
-                <a href="{% url 'accounts:edit' %}" style="color: orange">Atualizar dados</a><br>
-                <a href="{% url 'accounts:edit_password' %}" style="color: orange">Alterar Senha</a><br>
-                <a href="{% url 'services:myservices_list_update' %}" style="color: orange">Atualizar serviços</a>
-            </div>
+                    <a href="{% url 'accounts:edit' %}" style="color: orange">Atualizar dados</a><br>
+                    <a href="{% url 'accounts:edit_password' %}" style="color: orange">Alterar Senha</a><br>
+                    <a href="{% url 'services:myservices_list_update' %}" style="color: orange">Atualizar serviços</a>
+                </div>
+            {% endblock %}
 
         </div>
 
