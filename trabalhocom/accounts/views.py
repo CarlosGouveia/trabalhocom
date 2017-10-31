@@ -5,7 +5,12 @@ from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
 from django.contrib import messages
 from .forms import RegisterForm, EditAccountForm, PasswordResetForm, AlteraSenha, EditarSenha
 from .models import PasswordReset
+
+from django.http import JsonResponse
+from django.conf import settings
+import os
 import json
+
 
 User = get_user_model()
 
@@ -68,7 +73,17 @@ def edit(request):
             return redirect('accounts:edit')
     else:
         form = EditAccountForm(instance=request.user)
-    context['form'] = form
+
+    context = {
+        'form': form,
+        'estados': []
+    }
+
+    estado = json.loads(open(os.path.join(settings.BASE_DIR, 'trabalhocom/accounts/estado-cidade.json')).read())
+
+    for i in range(len(estado)):
+        context['estados'].append({'nome': estado[i]['nome'], 'uf': estado[i]['sigla']})
+
     return render(request, template_name, context)
 
 def register(request):
@@ -83,8 +98,15 @@ def register(request):
     else:
         form = RegisterForm()
     context = {
-        'form': form
+        'form': form,
+        'estados': []
     }
+
+    estado = json.loads(open(os.path.join(settings.BASE_DIR, 'trabalhocom/accounts/estado-cidade.json')).read())
+
+    for i in range(len(estado)):
+        context['estados'].append({'nome': estado[i]['nome'], 'uf': estado[i]['sigla']})
+
     return render(request, template_name, context)
 
 @login_required
@@ -104,3 +126,21 @@ def edit_password(request):
         form = EditarSenha(user=request.user)
     context['form'] = form
     return render(request, template_name, context)
+
+
+def get_cidades(request, uf):
+    data = json.loads(open(os.path.join(settings.BASE_DIR, 'trabalhocom/accounts/estado-cidade.json')).read())
+
+    context = {
+        'cidades': []
+    }
+
+    for i in range(len(data)):
+        if data[i]['sigla'] == uf:
+            cidades = data[i]['cidades']
+
+    context['cidades'].append('<option value="" selected>Selecione uma cidade...</option>')
+    for cidade in cidades:
+        context['cidades'].append("<option value='"+cidade+"'>"+cidade+"</option>")
+
+    return JsonResponse(context)

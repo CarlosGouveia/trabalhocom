@@ -31,6 +31,29 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="form-group col-md-12">
+                        <div class="form-row justify-content-md-center">
+                            <div class="form-group col-md-3 justify-content-md-start">
+                                <label>Valor - R$</label>
+                            </div>
+                            <div class="form-group col-md-2">
+                                {{ form.valor }}
+                            </div>
+                            <div class="form-group col-md-1 text-center">
+                                <label>Por</label>
+                            </div>
+                            <div class="form-group col-md-3 ">
+                                <select class="form-control" name="valor_servico">
+                                    <option value="" selected>Selecione ...</option>
+                                    <option value="HO">Hora</option>
+                                    <option value="DI">Dia</option>
+                                    <option value="SE">Serviço</option>
+                                </select>
+                            </div>
+                        </div>
+                     </div>
+
                     <div class="form-group col-md-12">
                         <div class="form-row justify-content-md-center">
                             <div class="form-group col-md-3 justify-content-md-start">

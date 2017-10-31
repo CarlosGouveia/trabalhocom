@@ -9,6 +9,7 @@ urlpatterns = [
     # url(r'^editar-servico/$', views.edit_services, name='edit_services'),
     url(r'^meus-servico-editar/$', views.myservices_list_update, name='myservices_list_update'),
     url(r'^(?P<pk>\d+)/$', views.edit_services, name='edit_services'),
+    url(r'^detalhes-busca/$', views.detail_search, name='detail_search'),
 ]
 
 # url(r'^(?P<pk>\d+)/$'

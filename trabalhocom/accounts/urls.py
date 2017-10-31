@@ -13,4 +13,6 @@ urlpatterns = [
     url(r'^editar/$', views.edit, name='edit'),
     url(r'^editar-senha/$', views.edit_password, name='edit_password'),
 
+    url(r'^get_cidades/(?P<uf>[\w]+)/$', views.get_cidades, name='get_cidades')
+
 ]

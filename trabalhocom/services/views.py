@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .forms import FormCadastroSevico, AtualizarServicoForm
+from .forms import FormCadastroSevico, AtualizarServicoForm, DetalhaServicoForm
 from django.contrib import messages
 from .models import Service
 
@@ -16,6 +16,26 @@ def myservices_list_update(request):
     servicos = Service.objects.filter(usuario_id=request.user)
     template_name = 'myservices_list_update.html'
     context = {'servicos': servicos}
+    return render(request, template_name, context)
+
+@login_required
+def detail_search(request, pk):
+    servico = get_object_or_404(Service, pk=pk)
+    context = {}
+    if request.method == 'POST':
+        form = DetalhaServicoForm(request.POST, instance=servico)
+        if form.is_valid():
+            servico = form.save(commit=False)
+            servico.usuario = request.user
+            servico.save()
+            form = DetalhaServicoForm(instance=servico)
+            context['success'] = True
+            messages.success(request, 'Serviço selecionado!')
+            return redirect('services:detail_search')
+    else:
+        form = AtualizarServicoForm(instance=servico)
+    context['form'] = form
+    template_name = 'detail_search.html'
     return render(request, template_name, context)
 
 @login_required
