@@ -19,9 +19,6 @@
                         <a class="nav-link js-scroll-trigger" href="{% url 'accounts:dashboard' %}">Painel</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#services">Serviços</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="{% url 'core:home' %}#team">Equipe</a>
                     </li>
                     <li class="nav-item">
@@ -36,8 +33,8 @@
     </nav>
 
 
-    <div class="row">
-        <div class="col-md-3 justify-content-md-center" style="background-color: #cfd2d6">
+    <div class="row" style="background-color: whitesmoke">
+        <div class="col-md-3 justify-content-md-center">
             <br><br><br><br><br><br>
             <div class="team-member">
                 {% if user.image %}
@@ -48,9 +45,9 @@
                 <br><br>
                 <h6 style="color: black">{{ user.username }}</h6><br><br>
 
-                <a href="{% url 'accounts:edit' %}" style="color: black">Atualizar dados</a><br>
-                <a href="{% url 'accounts:edit_password' %}" style="color: black">Alterar Senha</a><br>
-                <a href="{% url 'services:myservices' %}" style="color: black">Atualizar serviços</a>
+                <a href="{% url 'accounts:edit' %}" style="color: orange">Atualizar dados</a><br>
+                <a href="{% url 'accounts:edit_password' %}" style="color: orange">Alterar Senha</a><br>
+                <a href="{% url 'services:myservices_list_update' %}" style="color: orange">Atualizar serviços</a>
             </div>
 
         </div>

@@ -3,4 +3,4 @@
 __pycache__
 myenv
 DS_Store
-.idea
+bd_t.sqlite3
