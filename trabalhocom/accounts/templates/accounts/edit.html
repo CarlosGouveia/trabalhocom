@@ -69,17 +69,34 @@
                         </div>
                     </div>
                     <div class="form-group col-md-12">
-                        <div class="form-row justify-content-md-center">
-                            <div class="form-group col-md-5">
-                                <label>Estado</label>
-                                {{ form.estado }}
-                            </div>
-                            <div class="form-group col-md-5">
-                                <label>Cidade</label>
-                                {{ form.cidade }}
-                            </div>
+                    <div class="form-row justify-content-center">
+                        <div class="form-group col-md-5">
+                            <label>Estado</label>
+                            <select id="estados" class="form-control" name="estado">
+                                <option value="" selected>Selecione um estado...</option>
+                                {% for estado in estados %}
+                                    <option value="{{ estado.uf }}">{{ estado.nome }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group col-md-5">
+                            <label>Cidade</label>
+                            <select id="cidades" class="form-control" name="cidade" disabled></select>
                         </div>
                     </div>
+                    </div>
+{#                    <div class="form-group col-md-12">#}
+{#                        <div class="form-row justify-content-md-center">#}
+{#                            <div class="form-group col-md-5">#}
+{#                                <label>Estado</label>#}
+{#                                {{ form.estado }}#}
+{#                            </div>#}
+{#                            <div class="form-group col-md-5">#}
+{#                                <label>Cidade</label>#}
+{#                               {{ form.cidade }}#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
                     <div class="form-group col-md-12">
                         <div class="form-row justify-content-md-center">
                             <div class="form-group col-md-5">
@@ -116,4 +133,23 @@
         </div>
     </section>
 
+{% endblock %}
+
+
+
+{% block scripts %}
+    <script>
+        $("#estados").change(function () {
+            var uf = $(this).val();
+
+            $.ajax({
+                url: '/conta/get_cidades/' + uf,
+                dataType: 'json',
+                success: function (dataReturn) {
+                    $("#cidades").html(dataReturn.cidades);
+                    document.getElementById("cidades").disabled = false;
+                }
+            });
+        });
+    </script>
 {% endblock %}

@@ -48,3 +48,13 @@ var opcoes = {onKeyPress: function(dt_nasc, e, field, opcoes){
 $('[name=dt_nasc]').mask('00/00/0000', opcoes);
 
 // fim
+
+// Mascara para valor
+
+var opcoes = {onKeyPress: function(valor, e, field, opcoes){
+    mascara ='00,00';
+    $('[name=valoor]').mask(mascara, opcoes);
+}};
+$('[name=valoor]').mask('00,00', opcoes);
+
+// fim
