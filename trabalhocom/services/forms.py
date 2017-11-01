@@ -36,7 +36,7 @@ class AtualizarServicoForm(forms.ModelForm):
 
     class Meta:
         model = Service
-        fields = ['descricao_servico', 'valor', 'valor_servico', 'tempo_experiencia', 'unid_tempo', 'descricao_exp']
+        fields = ['categoria','descricao_servico', 'valor', 'valor_servico', 'tempo_experiencia', 'unid_tempo', 'descricao_exp']
 
 
 class DetalhaServicoForm(forms.ModelForm):

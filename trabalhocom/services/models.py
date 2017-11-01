@@ -22,7 +22,7 @@ class Service(models.Model):
     descricao_exp = models.TextField('Descrição/Experiencia', max_length=400, default=True)
     valor = models.DecimalField('Valor', decimal_places=2 , max_digits=10, default=True)
     valor_servico = models.CharField('Valor serviço', max_length=3, default=True)
-    descricao = models.TextField('Descrição', max_length=400)
+    #descricao = models.TextField('Descrição', max_length=400)
     #categoria =
 
     def __str__(self):

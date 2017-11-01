@@ -47,9 +47,11 @@
 {#                                {{ form.descricao_servico }}#}
                             </div>
                             <div class="form-group col-md-6">
-                                <select class="form-control" name="">
+                                <select class="form-control" name="categoria">
                                     <option value="" selected>Selecione ...</option>
-{#                                   {{ categoria.nome }}
+                                        {% for cat in categoria %}
+                                            <option value="{{ cat.id }}">{{ cat.nome }}</option>
+                                        {% endfor %}
                                 </select>
 {#                                <label>Descrição/Serviço</label>#}
 {#                                {{ form.descricao_servico }}#}
