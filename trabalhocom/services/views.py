@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .forms import FormCadastroSevico, AtualizarServicoForm, DetalhaServicoForm
 from django.contrib import messages
-from .models import Service
+from .models import Service, CategoriaServico
 
 @login_required
 def myservices(request):
@@ -18,8 +18,6 @@ def myservices_list_update(request):
     context = {'servicos': servicos}
     return render(request, template_name, context)
 
-<<<<<<< HEAD
-=======
 @login_required
 def detail_search(request, pk):
     servico = get_object_or_404(Service, pk=pk)
@@ -41,7 +39,6 @@ def detail_search(request, pk):
     return render(request, template_name, context)
 
 @login_required
->>>>>>> e1c52a5759f80a29aa6fef77aa89d73502d7d95f
 def search_professionals(request):
     servicos = Service.objects.all()
     template_name = 'search_professionals.html'
@@ -50,6 +47,7 @@ def search_professionals(request):
 
 @login_required
 def register_services(request):
+    #popula_categoria()
     template_name = 'register_services.html'
     context = {}
     if request.method == 'POST':
@@ -83,3 +81,13 @@ def edit_services(request, pk):
     context['form'] = form
     template_name = 'edit_services.html'
     return render(request, template_name, context)
+
+
+def popula_categoria():
+    CategoriaServico.objects.create(nome='Desenvolvedor JAVA')
+    CategoriaServico.objects.create(nome='Desenvolvedor PYTHON')
+    CategoriaServico.objects.create(nome='Desenvolvedor PHP')
+    CategoriaServico.objects.create(nome='Desenvolvedor RUBY')
+    CategoriaServico.objects.create(nome='Desenvolvedor C#')
+    CategoriaServico.objects.create(nome='Desenvolvedor COBOL')
+

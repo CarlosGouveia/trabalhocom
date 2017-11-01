@@ -3,7 +3,6 @@ from .models import Service
 
 class FormCadastroSevico(forms.ModelForm):
 
-
     descricao_servico = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     tempo_experiencia = forms.IntegerField(min_value=0, widget=forms.NumberInput(attrs={'class': 'form-control'}))
     descricao_exp = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control'}))
@@ -13,13 +12,10 @@ class FormCadastroSevico(forms.ModelForm):
         data = self.cleaned_data
         servico = Service()
         servico.usuario = request.user
+        servico.categoria = data['categoria']
         servico.descricao_servico = data['descricao_servico']
         servico.tempo_experiencia = data['tempo_experiencia']
-<<<<<<< HEAD
         servico.unid_tempo = data['unid_tempo']
-=======
-        #servico.TEMPO_CHOICES = data['unid_tempo']
->>>>>>> e1c52a5759f80a29aa6fef77aa89d73502d7d95f
         servico.descricao_exp = data['descricao_exp']
         servico.valor = data['valor']
         servico.valor_servico = data['valor_servico']
@@ -29,7 +25,7 @@ class FormCadastroSevico(forms.ModelForm):
 
     class Meta:
         model = Service
-        fields = ['descricao_servico', 'valor', 'valor_servico', 'tempo_experiencia', 'unid_tempo', 'descricao_exp']
+        fields = ['descricao_servico', 'valor', 'valor_servico', 'tempo_experiencia', 'unid_tempo', 'descricao_exp','categoria']
 
 class AtualizarServicoForm(forms.ModelForm):
 

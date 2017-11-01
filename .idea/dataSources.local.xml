@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="bd_t.sqlite3" uuid="99d4d98b-56e9-43b9-97b4-9552b1bd1d5b">
+    <data-source name="bd_t.sqlite3" uuid="dbffc61c-6e96-48ec-b5e2-4977260f128a">
       <database-info product="SQLite" version="3.16.1" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" />
       <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <secret-storage>master_key</secret-storage>

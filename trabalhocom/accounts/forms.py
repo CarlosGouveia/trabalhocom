@@ -27,8 +27,8 @@ class RegisterForm(UserCreationForm):
     rua = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     numero = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     bairro = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
-    # cidade = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
-    # estado = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+    cidade = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+    estado = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
 
     def save(self, commit=True):
         user = super(RegisterForm, self).save(commit=False)
