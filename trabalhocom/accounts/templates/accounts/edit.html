@@ -81,7 +81,7 @@
                         </div>
                         <div class="form-group col-md-5">
                             <label>Cidade</label>
-                            <select id="cidades" class="form-control" name="cidade" disabled></select>
+                            <select id="cidades" class="form-control" name="cidade" disabled"></select>
                         </div>
                     </div>
                     </div>
@@ -139,6 +139,22 @@
 
 {% block scripts %}
     <script>
+
+        $(document).ready(function() {
+            var uf = document.getElementById("estados").value = '{{ form.estado.value }}';
+
+            $.ajax({
+                url: '/conta/get_cidades/' + uf,
+                dataType: 'json',
+                success: function (dataReturn) {
+                    $("#cidades").html(dataReturn.cidades);
+                    document.getElementById("cidades").value = '{{ form.cidade.value }}';
+                }
+            });
+
+            document.getElementById("cidades").value = '{{ form.cidade.value }}';
+        });
+
         $("#estados").change(function () {
             var uf = $(this).val();
 

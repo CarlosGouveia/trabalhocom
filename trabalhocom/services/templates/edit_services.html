@@ -17,16 +17,29 @@
                 {{ form.errors }}
 
                 <div class="form-row">
+                     <div class="form-group col-md-12">
+                         <div class="form-row justify-content-md-center">
+                                <div class="form-group col-md-3 justify-content-md-start">
+                                    <label>Categoria</label>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <select class="form-control" name="categoria">
+                                        <option value="" selected>Selecione ...</option>
+                                            {% for cat in categoria %}
+                                                <option value="{{ cat.id }}">{{ cat.nome }}</option>
+                                            {% endfor %}
+                                    </select>
+                                </div>
+                         </div>
+                     </div>
 
                     <div class="form-group col-md-12">
 
                         <div class="form-row justify-content-md-center">
                             <div class="form-group col-md-3 justify-content-md-start">
                                 <label>Descrição/Serviço</label>
-{#                                {{ form.descricao_servico }}#}
                             </div>
                             <div class="form-group col-md-6">
-{#                                <label>Descrição/Serviço</label>#}
                                 {{ form.descricao_servico }}
                             </div>
                         </div>
@@ -40,7 +53,7 @@
                             <div class="form-group col-md-2">
                                 {{ form.valor }}
                             </div>
-                            <div class="form-group col-md-1 text-center">
+                            <div class="form-group col-md-1 text-justify text-left ">
                                 <label>Por</label>
                             </div>
                             <div class="form-group col-md-3 ">
@@ -58,14 +71,11 @@
                         <div class="form-row justify-content-md-center">
                             <div class="form-group col-md-3 justify-content-md-start">
                                 <label>Tempo/Experiência</label>
-{#                                {{ form.tempo_experiencia }}#}
                             </div>
                             <div class="form-group col-md-3">
-{#                                <label>Tempo/Experiência</label>#}
                                 {{ form.tempo_experiencia }}
                             </div>
                             <div class="form-group col-md-3">
-{#                                <label>Cidade</label>#}
                                 <select class="form-control" name="unid_tempo">
                                     <option value="" selected>Selecione ...</option>
                                     <option value="ME">Mês(es)</option>
@@ -78,22 +88,12 @@
                         <div class="form-row justify-content-md-center">
                             <div class="form-group col-md-3">
                                 <label>Descrição/Experiência</label>
-{#                                {{ form.descricao_exp }}#}
                             </div>
                             <div class="form-group col-md-6">
-{#                                <label>Descrição/Experiência</label>#}
                                 {{ form.descricao_exp }}
                             </div>
                         </div>
                     </div>
-{#                    <div class="form-group col-md-12">#}
-{#                        <div class="form-row justify-content-md-center">#}
-{#                            <div class="form-group col-md-9">#}
-{#                                <label>Valor</label>#}
-{#                                {{ form.valor }}#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
 
                     <div class="form-group col-md-12">
                         <div class="form-row justify-content-md-center">

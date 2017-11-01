@@ -6,6 +6,7 @@ from .models import Service, User
 import json, os
 from django.http import JsonResponse
 from django.conf import settings
+from .models import Service, CategoriaServico
 
 # LISTA TODOS OS SERVICOS DO USUARIO QUE ESTÁ LOGADO COM A OPÇÃO DE VER MAIS DETALHES
 @login_required
@@ -69,6 +70,8 @@ def search_All_services(request):
 # REGISTRO DE SERVIÇOS
 @login_required
 def register_services(request):
+    #popula_categoria()
+    categoria = CategoriaServico.objects.all()
     template_name = 'register_services.html'
     context = {}
     if request.method == 'POST':
@@ -81,12 +84,16 @@ def register_services(request):
     else:
         form = FormCadastroSevico()
 
-    context['form'] = form
+    context = {
+        'form': form,
+        'categoria': categoria,
+    }
     return render(request, template_name, context)
 
 # EDITAR SERVIÇOS
 def edit_services(request, pk):
     servico = get_object_or_404(Service, pk=pk)
+    categoria = CategoriaServico.objects.all()
     context = {}
     if request.method == 'POST':
         form = AtualizarServicoForm(request.POST, instance=servico)
@@ -100,7 +107,10 @@ def edit_services(request, pk):
             return redirect('services:myservices_list_update')
     else:
         form = AtualizarServicoForm(instance=servico)
-    context['form'] = form
+    context = {
+        'form': form,
+        'categoria': categoria,
+    }
     template_name = 'edit_services.html'
     return render(request, template_name, context)
 
@@ -120,3 +130,18 @@ def get_cidades(request, uf):
         context['cidades'].append("<option value='"+cidade+"'>"+cidade+"</option>")
 
     return JsonResponse(context)
+
+def popula_categoria():
+    CategoriaServico.objects.create(nome='Agronomo')
+    CategoriaServico.objects.create(nome='Ajudante de Pedreiro')
+    CategoriaServico.objects.create(nome='Costureiro')
+    CategoriaServico.objects.create(nome='Costureiro')
+    CategoriaServico.objects.create(nome='Marceneiro')
+    CategoriaServico.objects.create(nome='Pedreiro')
+    CategoriaServico.objects.create(nome='Programador')
+    CategoriaServico.objects.create(nome='Pedreiro')
+    CategoriaServico.objects.create(nome='Marceneiro')
+    CategoriaServico.objects.create(nome='Costureiro')
+    CategoriaServico.objects.create(nome='Ajudante de Pedreiro')
+    CategoriaServico.objects.create(nome='Agronomo')
+

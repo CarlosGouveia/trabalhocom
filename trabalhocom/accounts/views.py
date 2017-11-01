@@ -65,6 +65,7 @@ def edit(request):
     context = {}
     if request.method == 'POST':
         form = EditAccountForm(request.POST, request.FILES, instance=request.user)
+        # print(form)
         if form.is_valid():
             form.save()
             form = EditAccountForm(instance=request.user)
@@ -73,7 +74,7 @@ def edit(request):
             return redirect('accounts:edit')
     else:
         form = EditAccountForm(instance=request.user)
-
+        # print(form)
     context = {
         'form': form,
         'estados': []
