@@ -7,10 +7,6 @@ import datetime
 
 class User(AbstractBaseUser, PermissionsMixin):
 
-    SEXO_CHOICES = (
-        (u'M', u'Masculino'),
-        (u'F', u'Feminino'),
-    )
 
     email = models.EmailField('E-mail', unique=True)
     username = models.CharField('Nome completo', max_length=100, default=True)

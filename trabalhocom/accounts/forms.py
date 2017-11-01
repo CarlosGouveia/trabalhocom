@@ -75,7 +75,7 @@ class EditAccountForm(forms.ModelForm):
     bairro = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     cidade = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     estado = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
-    image = forms.ImageField(widget=forms.FileInput(attrs={'class': 'form-control'}))
+    # image = forms.ImageField(widget=forms.FileInput(attrs={'class': 'form-control'}))
 
 
     class Meta:

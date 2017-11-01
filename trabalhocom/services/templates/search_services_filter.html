@@ -1,0 +1,53 @@
+{% extends "search_ALL_services.html" %}
+{% block busca_content %}
+
+    {% for servico in servicos %}
+        <div class="row justify-content-md-center">
+            <div class="col-md-3" style="background-color: white">
+                <div class="row">
+                    <h6 class="font-italic">
+                        {{ servico.usuario }}
+                    </h6>
+                </div>
+                <br>
+                <div class="row">
+                    <p>
+                        {{ servico.usuario.cidade }} / {{ servico.usuario.estado }}
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-5" style="background-color: white">
+                <div class="row">
+                    <h6 class="section-subheading">
+                        {{ servico.descricao_servico }}
+                    </h6>
+                </div>
+                <br>
+                <div class="row">
+                    <h6 class="section-subheading" style="color: #bd2130">
+                        Valor: {{ servico.valor }}
+                    </h6>
+                </div>
+            </div>
+
+            <div class="col-md-3 justify-content-md-center" style="background-color: white">
+                <a class="btn btn-link js-scroll-trigger" href="#">Mais detalhes</a>
+
+            </div>
+
+            <br>
+            <hr size="10" width="90%">
+            <br>
+
+        </div>
+    {% empty %}
+        <div class="row justify-content-md-center">
+            <div class="col-md-12 text-center">
+                <p>Nenhum serviço cadastrado</p>
+            </div>
+        </div>
+    {% endfor %}
+
+
+{% endblock %}

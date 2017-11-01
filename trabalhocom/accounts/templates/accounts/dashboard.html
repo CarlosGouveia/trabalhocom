@@ -34,9 +34,9 @@
 
 
     <div class="row" style="background-color: whitesmoke">
-        <div class="col-md-3 justify-content-md-center">
+        <div class="col-md-3 justify-content-md-center" style="padding-top: 150px">
             {% block menu_lateral_dashboard %}
-                <br><br><br><br><br><br>
+{#                <br><br><br><br><br><br>#}
                 <div class="team-member">
                     {% if user.image %}
                         <img class="mx-auto rounded-circle" src="{{ user.image.url }}" alt=""/>
@@ -87,7 +87,7 @@
                                 <p class="text-muted">Lista de todos os serviços prestados por você.</p>
                             </div>
                             <div class="col-md-4">
-                                <a class="btn js-scroll-trigger" href="{% url 'services:search-professionals' %}">
+                                <a class="btn js-scroll-trigger" href="{% url 'services:search-ALL-services' %}">
                                     <span class="fa-stack fa-4x">
                                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                                         <i class="fa fa-search fa-stack-1x fa-inverse"></i>

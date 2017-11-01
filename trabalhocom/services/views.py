@@ -2,8 +2,12 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .forms import FormCadastroSevico, AtualizarServicoForm, DetalhaServicoForm
 from django.contrib import messages
-from .models import Service
+from .models import Service, User
+import json, os
+from django.http import JsonResponse
+from django.conf import settings
 
+# LISTA TODOS OS SERVICOS DO USUARIO QUE ESTÁ LOGADO COM A OPÇÃO DE VER MAIS DETALHES
 @login_required
 def myservices(request):
     servicos = Service.objects.filter(usuario_id=request.user)
@@ -11,6 +15,7 @@ def myservices(request):
     context = {'servicos': servicos}
     return render(request, template_name, context)
 
+# LISTA TODOS OS SERVICOS DO USUARIO QUE ESTÁ LOGADO COM A OPÇÃO DE EDITAR
 @login_required
 def myservices_list_update(request):
     servicos = Service.objects.filter(usuario_id=request.user)
@@ -18,8 +23,7 @@ def myservices_list_update(request):
     context = {'servicos': servicos}
     return render(request, template_name, context)
 
-<<<<<<< HEAD
-=======
+# MOSTRA OS DETALHES DO SERVIÇO SELECIONADO
 @login_required
 def detail_search(request, pk):
     servico = get_object_or_404(Service, pk=pk)
@@ -40,14 +44,29 @@ def detail_search(request, pk):
     template_name = 'detail_search.html'
     return render(request, template_name, context)
 
-@login_required
->>>>>>> e1c52a5759f80a29aa6fef77aa89d73502d7d95f
-def search_professionals(request):
+# LISTA TODOS OS SERVICOS DE TODOS OS USUARIOS
+def search_All_services(request):
     servicos = Service.objects.all()
-    template_name = 'search_professionals.html'
-    context = {'servicos': servicos}
+    template_name = 'search_ALL_services.html'
+    context = {
+        'servicos': servicos,
+        'estados': []
+    }
+
+    estado = json.loads(open(os.path.join(settings.BASE_DIR, 'trabalhocom/accounts/estado-cidade.json')).read())
+
+    for i in range(len(estado)):
+        context['estados'].append({'nome': estado[i]['nome'], 'uf': estado[i]['sigla']})
+
     return render(request, template_name, context)
 
+# LISTA OS SERVIÇOS DE ACORDO COM O FILTRO APLICADO
+# def search_services(request):
+#
+#     if request.method=='POST':
+#         desc = request.POST['descricao']
+
+# REGISTRO DE SERVIÇOS
 @login_required
 def register_services(request):
     template_name = 'register_services.html'
@@ -65,6 +84,7 @@ def register_services(request):
     context['form'] = form
     return render(request, template_name, context)
 
+# EDITAR SERVIÇOS
 def edit_services(request, pk):
     servico = get_object_or_404(Service, pk=pk)
     context = {}
@@ -83,3 +103,20 @@ def edit_services(request, pk):
     context['form'] = form
     template_name = 'edit_services.html'
     return render(request, template_name, context)
+
+def get_cidades(request, uf):
+    data = json.loads(open(os.path.join(settings.BASE_DIR, 'trabalhocom/accounts/estado-cidade.json')).read())
+
+    context = {
+        'cidades': []
+    }
+
+    for i in range(len(data)):
+        if data[i]['sigla'] == uf:
+            cidades = data[i]['cidades']
+
+    context['cidades'].append('<option value="" selected>Selecione uma cidade...</option>')
+    for cidade in cidades:
+        context['cidades'].append("<option value='"+cidade+"'>"+cidade+"</option>")
+
+    return JsonResponse(context)

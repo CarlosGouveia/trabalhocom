@@ -46,15 +46,14 @@
     </nav>
 
     <div class="row" style="background-color: white">
-        <div class="col-md-3 justify-content-md-center" style="background-color: whitesmoke">
-            <br><br><br><br><br>
+        <div class="col-md-3 justify-content-md-center" style="background-color: whitesmoke; padding-top: 150px">
             <div class="container">
 
                 <div class="row justify-content-md-center text-center">
                     <h4 class="section-heading">Buscar</h4>
                 </div>
 
-                <form>
+                <form method="post">
                     {% csrf_token %}
                     <div class="form-row justify-content-center">
                         <div class="form-group col-md-12">
@@ -75,21 +74,19 @@
                     <div class="form-row justify-content-center">
                         <div class="form-group col-md-12">
                             <label>Estado</label>
-                            <select class="form-control" name="">
-                                <option value="" selected>Selecione ...</option>
-                                <option value=""></option>
-                                <option value=""></option>
+                            <select id="estados" class="form-control" name="estado">
+                                <option value="" selected>Selecione um estado...</option>
+                                {% for estado in estados %}
+                                    <option value="{{ estado.uf }}">{{ estado.nome }}</option>
+                                {% endfor %}
                             </select>
                         </div>
+
                     </div>
                     <div class="form-row justify-content-center">
                         <div class="form-group col-md-12">
                             <label>Cidade</label>
-                            <select class="form-control" name="">
-                                <option value="" selected>Selecione ...</option>
-                                <option value=""></option>
-                                <option value=""></option>
-                            </select>
+                            <select id="cidades" class="form-control" name="cidade" disabled></select>
                         </div>
                     </div>
                     <div class="form-row justify-content-center">
@@ -112,24 +109,56 @@
                         </div>
                     </div>
                 </div>
-                {% for servico in servicos %}
+                {% block busca_content %}
+                    {% for servico in servicos %}
+                        <div class="row justify-content-md-center">
+                            <div class="col-md-3" style="background-color: white">
+                                <div class="row">
+                                    <h6 class="font-italic">
+                                        {{ servico.usuario }}
+                                    </h6>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <p>
+                                        {{ servico.usuario.cidade }} / {{ servico.usuario.estado }}
+                                    </p>
+                                </div>
+                            </div>
 
-                    <div class="row justify-content-md-center">
-                        <div class="col-md-12 text-center">
-                            <h4 class="section-subheading">
-                                {{ servico.descricao_servico }}
-                            </h4>
-    {#                        {{ servico.descricao_exp|linebreaks }}#}
-                        </div>
-                    </div>
+                            <div class="col-md-5" style="background-color: white">
+                                <div class="row">
+                                    <h6 class="section-subheading">
+                                        {{ servico.descricao_servico }}
+                                    </h6>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <h6 class="section-subheading" style="color: #bd2130">
+                                        Valor: {{ servico.valor }}
+                                    </h6>
+                                </div>
+                            </div>
 
-                {% empty %}
-                    <div class="row justify-content-md-center">
-                        <div class="col-md-12 text-center">
-                            <p>Nenhum serviço cadastrado</p>
+                            <div class="col-md-3 justify-content-md-center" style="background-color: white">
+                                <a class="btn btn-link js-scroll-trigger" href="#">Mais detalhes</a>
+
+                            </div>
+
+                            <br>
+                            <hr size="10" width="90%">
+                            <br>
+
                         </div>
-                    </div>
-                {% endfor %}
+                    {% empty %}
+                        <div class="row justify-content-md-center">
+                            <div class="col-md-12 text-center">
+                                <p>Nenhum serviço cadastrado</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endblock %}
+
             </section>
         </div>
     </div>
@@ -169,4 +198,21 @@
         </div>
     </div>
 
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $("#estados").change(function () {
+            var uf = $(this).val();
+
+            $.ajax({
+                url: '/conta/get_cidades/' + uf,
+                dataType: 'json',
+                success: function (dataReturn) {
+                    $("#cidades").html(dataReturn.cidades);
+                    document.getElementById("cidades").disabled = false;
+                }
+            });
+        });
+    </script>
 {% endblock %}

@@ -9,20 +9,19 @@ class Service(models.Model):
 
     descricao_servico = models.CharField('Descrição/Serviço', max_length=100, default=True)
     tempo_experiencia = models.IntegerField('Tempo de Experiência', default=True)
-<<<<<<< HEAD
+
     unid_tempo = models.CharField(max_length=5, null=False, default=True)
     descricao_exp = models.TextField('Descrição/Experiencia', max_length=400, default=True)
 
 
    #categoria =
-=======
+
     unid_tempo = models.CharField('Unidade de medida', max_length=2, null=False, default=True)
     descricao_exp = models.TextField('Descrição/Experiencia', max_length=400, default=True)
     valor = models.DecimalField('Valor', decimal_places=2 , max_digits=10, default=True)
     valor_servico = models.CharField('Valor serviço', max_length=3, default=True)
     descricao = models.TextField('Descrição', max_length=400)
     #categoria =
->>>>>>> e1c52a5759f80a29aa6fef77aa89d73502d7d95f
 
     def __str__(self):
         return self.descricao_servico
