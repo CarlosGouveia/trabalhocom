@@ -17,16 +17,11 @@ class Service(models.Model):
     unid_tempo = models.CharField(max_length=5, null=False, default=True)
     descricao_exp = models.TextField('Descrição/Experiencia', max_length=400, default=True)
 
-
-   #categoria =
-
-    categoria = models.ForeignKey(CategoriaServico, on_delete= models.CASCADE)
+    categoria = models.ForeignKey(CategoriaServico, on_delete=models.CASCADE)
     unid_tempo = models.CharField('Unidade de medida', max_length=2, null=False, default=True)
     descricao_exp = models.TextField('Descrição/Experiencia', max_length=400, default=True)
     valor = models.DecimalField('Valor', decimal_places=2 , max_digits=10, default=True)
     valor_servico = models.CharField('Valor serviço', max_length=3, default=True)
-    #descricao = models.TextField('Descrição', max_length=400)
-    #categoria =
 
     def __str__(self):
         return self.descricao_servico

@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #23272b" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="{% url 'core:home' %}">Home</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                    data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                    aria-label="Toggle navigation">Menu<i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{% url 'core:home' %}#about">Sobre</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="{% url 'accounts:dashboard' %}">Painel</a>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{% url 'core:home' %}#team">Equipe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{% url 'core:home' %}#contact">Contato</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="{% url 'accounts:logout' %}">Sair</a>
+                        </li>
+
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="{% url 'accounts:register' %}">Cadastrar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="" data-toggle="modal"
+                               data-target="#login">Login</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="row" style="padding-top: 150px">
+
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-12 text-center">
+                        <h2 class="section-heading">Mais Detalhes</h2>
+                        <h5 class="section-subheading text-muted">Encontrou o profissional que estava procurando?
+                            Entre em contato para combinar a execução do serviço</h5>
+                        <br>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <div class="row" style="background-color: white">
+        <div class="col-md-4 justify-content-md-center">
+            <div class="container">
+
+                {% for serv in servico %}
+                    <div class="team-member">
+                        {% if serv.usuario.image %}
+                            <img class="mx-auto rounded-circle" src="{{ serv.usuario.image.url }}" alt=""/>
+                        {% else %}
+                            <img class="mx-auto rounded-circle" src="../../../static/img/perfil.png" alt="">
+                        {% endif %}
+                        <br><br>
+                        <h6 style="color: black">{{ serv.usuario }}</h6>
+                        <p>
+                            {{ serv.usuario.cidade }}/{{ serv.usuario.estado }}
+                        </p>
+
+                    </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+        <div class="col-md-8">
+            <div class="container">
+                {% for serv in servico %}
+                    <div class="row" style="padding-top: 20px">
+                        <div class="col-md-3">
+                            <label>
+                                Descrição/Serviço:
+                            </label>
+                        </div>
+                        <div class="col-md-8">
+                            <h6>
+                                {{ serv.descricao_servico }}
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>
+                                Categoria:
+                            </label>
+                        </div>
+                        <div class="col-md-8">
+                            <h6>
+                               {{ serv.categoria.nome }}
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>
+                                Tempo/Experiência:
+                            </label>
+                        </div>
+                        <div class="col-md-8">
+                            <h6>
+                               {{ serv.tempo_experiencia }} {{ serv.unid_tempo }}
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>
+                                Descrição/Experiência:
+                            </label>
+                        </div>
+                        <div class="col-md-8">
+                            <h6>
+                               {{ serv.descricao_exp }}
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>
+                                Valor(R$):
+                            </label>
+                        </div>
+                        <div class="col-md-8">
+                            <h6>
+                               {{ serv.valor }} por {{ serv.valor_servico }}
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>
+                                Contato:
+                            </label>
+                        </div>
+                        <div class="col-md-8">
+                            <h6>
+                               {{ serv.usuario.telefone }}
+                            </h6>
+                        </div>
+                    </div>
+
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
