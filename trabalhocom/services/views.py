@@ -2,11 +2,30 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .forms import FormCadastroSevico, AtualizarServicoForm, DetalhaServicoForm
 from django.contrib import messages
+from django.contrib.auth import authenticate, login, get_user_model
 from .models import Service, User
 import json, os
 from django.http import JsonResponse
 from django.conf import settings
 from .models import Service, CategoriaServico
+from trabalhocom.services.forms import login_form
+
+User = get_user_model()
+
+def login_view_services(request):
+
+    if request.method=='POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        user = authenticate(request, email=email, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('services:search-ALL-services')
+        else:
+            messages.error(request, 'Email ou senha incorretos!')
+            return redirect('services:search-ALL-services')
+    else:
+        return redirect('services:search-ALL-services')
 
 # LISTA TODOS OS SERVICOS DO USUARIO QUE ESTÁ LOGADO COM A OPÇÃO DE VER MAIS DETALHES
 @login_required
@@ -122,7 +141,8 @@ def search_All_services(request):
     context = {
         'servicos': servicos,
         'estados': [],
-        'categoria': categoria
+        'categoria': categoria,
+        'form_login': login_form
     }
 
     estado = json.loads(open(os.path.join(settings.BASE_DIR, 'trabalhocom/accounts/estado-cidade.json')).read())

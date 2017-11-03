@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^(?P<pk>\d+)/$', views.edit_services, name='edit_services'),
     url(r'^detalhes-busca/$', views.detail_search, name='detail_search'),
     url(r'^mais-detalhes(?P<pk>\d+)/$', views.mais_detalhes, name='mais_detalhes'),
+    url(r'^entrar/$', views.login_view_services, name='login'),
 ]
 
 # url(r'^(?P<pk>\d+)/$'
