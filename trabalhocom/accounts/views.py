@@ -25,6 +25,7 @@ def login_view(request):
             return redirect('/')
         else:
             messages.error(request, 'Email ou senha incorretos!')
+            messages_login = messages
             return redirect('/')
     else:
         return redirect('/')
