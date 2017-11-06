@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'trabalhocom.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'trabalhocom',
+        'NAME': 'trabalhocom2',
         'USER': '',
         'PASSWORD': '',
         'HOST': 'localhost',
