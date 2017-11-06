@@ -83,7 +83,7 @@ DATABASES = {
     'default': {
         # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'trabalhocom',
+        'NAME': os.path.join(BASE_DIR, 'bd_t.sqlite3'),
         'USER': '',
         'PASSWORD': '',
         'HOST': 'localhost',
