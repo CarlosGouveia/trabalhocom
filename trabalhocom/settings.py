@@ -80,18 +80,18 @@ WSGI_APPLICATION = 'trabalhocom.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'trabalhocom',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
     # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'bd_t.sqlite3'),
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': 'trabalhocom',
+    #     'USER': '',
+    #     'PASSWORD': '',
+    #     'HOST': 'localhost',
+    #     'PORT': '',
     # }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'bd_t.sqlite3'),
+    }
 }
 
 db_from_env = dj_database_url.config(conn_max_age=500)
