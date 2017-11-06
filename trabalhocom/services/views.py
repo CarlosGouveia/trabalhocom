@@ -155,7 +155,7 @@ def search_All_services(request):
 # REGISTRO DE SERVIÇOS
 @login_required
 def register_services(request):
-    # popula_categoria()
+    popula_categoria()
     categoria = CategoriaServico.objects.all()
     template_name = 'register_services.html'
     context = {}
@@ -187,7 +187,6 @@ def mais_detalhes(request, pk):
 
 # EDITAR SERVIÇOS
 def edit_services(request, pk):
-    print("Ta entrando aki carai")
     servico = get_object_or_404(Service, pk=pk)
     categoria = CategoriaServico.objects.all()
     context = {}
