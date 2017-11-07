@@ -21,7 +21,7 @@ class RegisterForm(UserCreationForm):
     password2 = forms.CharField(strip=False, widget=forms.PasswordInput(attrs={'class': 'form-control'}))
     username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     telefone = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
-    cpf = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder' : '999.999.999-99'}))
+    cpf = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     rg = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     dt_nasc = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     rua = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
