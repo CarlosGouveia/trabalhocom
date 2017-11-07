@@ -2,8 +2,32 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .forms import FormCadastroSevico, AtualizarServicoForm, DetalhaServicoForm
 from django.contrib import messages
+from django.contrib.auth import authenticate, login, get_user_model
+from .models import Service, User
+import json, os
+from django.http import JsonResponse
+from django.conf import settings
 from .models import Service, CategoriaServico
+from trabalhocom.services.forms import login_form
 
+User = get_user_model()
+
+def login_view_services(request):
+
+    if request.method=='POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        user = authenticate(request, email=email, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('services:search-ALL-services')
+        else:
+            messages.error(request, 'Email ou senha incorretos!')
+            return redirect('services:search-ALL-services')
+    else:
+        return redirect('services:search-ALL-services')
+
+# LISTA TODOS OS SERVICOS DO USUARIO QUE ESTÁ LOGADO COM A OPÇÃO DE VER MAIS DETALHES
 @login_required
 def myservices(request):
     servicos = Service.objects.filter(usuario_id=request.user)
@@ -11,6 +35,7 @@ def myservices(request):
     context = {'servicos': servicos}
     return render(request, template_name, context)
 
+# LISTA TODOS OS SERVICOS DO USUARIO QUE ESTÁ LOGADO COM A OPÇÃO DE EDITAR
 @login_required
 def myservices_list_update(request):
     servicos = Service.objects.filter(usuario_id=request.user)
@@ -18,6 +43,7 @@ def myservices_list_update(request):
     context = {'servicos': servicos}
     return render(request, template_name, context)
 
+# MOSTRA OS DETALHES DO SERVIÇO SELECIONADO
 @login_required
 def detail_search(request, pk):
     servico = get_object_or_404(Service, pk=pk)
@@ -38,16 +64,98 @@ def detail_search(request, pk):
     template_name = 'detail_search.html'
     return render(request, template_name, context)
 
-@login_required
-def search_professionals(request):
-    servicos = Service.objects.all()
-    template_name = 'search_professionals.html'
-    context = {'servicos': servicos}
+# LISTA TODOS OS SERVICOS DE TODOS OS USUARIOS
+def search_All_services(request):
+    categoria = CategoriaServico.objects.all()
+    servicos = None
+
+    if request.method == 'POST':
+        descr = request.POST['descricao']
+        categ = request.POST['categoria']
+        est = request.POST['estado']
+        cid = request.POST['cidade']
+
+        # todos o campos
+        if descr and categ and est and cid:
+            servicos = Service.objects.filter(descricao_servico__icontains=descr).filter(categoria__nome=categ).filter(
+                usuario__estado=est).filter(usuario__cidade=cid)
+
+        # tres campos
+        elif descr and categ and est and not cid:
+            servicos = Service.objects.filter(descricao_servico__icontains=descr).filter(
+                categoria__nome=categ).filter(usuario__estado=est)
+
+        elif descr and categ and not est and cid:
+            servicos = Service.objects.filter(descricao_servico__icontains=descr).filter(
+                categoria__nome=categ).filter(usuario__cidade=cid)
+
+        elif descr and not categ and est and cid:
+            servicos = Service.objects.filter(descricao_servico__icontains=descr).filter(
+                usuario__estado=est).filter(usuario__cidade=cid)
+
+        elif not descr and categ and est and cid:
+            servicos = Service.objects.filter(categoria__nome=categ).filter(
+                usuario__estado=est).filter(usuario__cidade=cid)
+
+
+        # dois campos
+        elif descr and categ and not est and not cid:
+            servicos = Service.objects.filter(descricao_servico__icontains=descr).filter(categoria__nome=categ)
+
+        elif descr and not categ and est and not cid:
+            servicos = Service.objects.filter(descricao_servico__icontains=descr).filter(usuario__estado=est)
+
+        elif not descr and categ and est and not cid:
+            servicos = Service.objects.filter(categoria__nome=categ).filter(usuario__estado=est)
+
+        elif descr and not categ and not est and cid:
+            servicos = Service.objects.filter(descricao_servico__icontains=descr).filter(usuario__cidade=cid)
+
+        elif not descr and categ and not est and cid:
+            servicos = Service.objects.filter(categoria__nome=categ).filter(usuario__cidade=cid)
+
+        elif not descr and not categ and est and cid:
+            servicos = Service.objects.filter(usuario__estado=est).filter(usuario__cidade=cid)
+
+
+        #1 campo
+        elif descr and not categ and not est and not cid:
+            servicos = Service.objects.filter(descricao_servico__icontains=descr)
+
+        elif not descr and categ and not est and not cid:
+            servicos = Service.objects.filter(categoria__nome=categ)
+
+        elif not descr and not categ and est and not cid:
+            servicos = Service.objects.filter(usuario__estado=est)
+
+        elif not descr and not categ and not est and cid:
+            servicos = Service.objects.filter(usuario__cidade=cid)
+
+
+        else:
+            servicos = Service.objects.all()
+    else:
+        servicos = Service.objects.all()
+
+    template_name = 'search_ALL_services.html'
+    context = {
+        'servicos': servicos,
+        'estados': [],
+        'categoria': categoria,
+        'form_login': login_form
+    }
+
+    estado = json.loads(open(os.path.join(settings.BASE_DIR, 'trabalhocom/accounts/estado-cidade.json')).read())
+
+    for i in range(len(estado)):
+        context['estados'].append({'nome': estado[i]['nome'], 'uf': estado[i]['sigla']})
+
     return render(request, template_name, context)
 
+# REGISTRO DE SERVIÇOS
 @login_required
 def register_services(request):
-    #popula_categoria()
+    # popula_categoria()
     categoria = CategoriaServico.objects.all()
     template_name = 'register_services.html'
     context = {}
@@ -67,7 +175,19 @@ def register_services(request):
     }
     return render(request, template_name, context)
 
+@login_required
+def mais_detalhes(request, pk):
+    servico = Service.objects.filter(pk=pk)
+
+    context = {
+        'servico': servico
+    }
+    template_name = 'mais_detalhes.html'
+    return render(request, template_name, context)
+
+# EDITAR SERVIÇOS
 def edit_services(request, pk):
+    print("Ta entrando aki carai")
     servico = get_object_or_404(Service, pk=pk)
     categoria = CategoriaServico.objects.all()
     context = {}
@@ -90,6 +210,23 @@ def edit_services(request, pk):
     template_name = 'edit_services.html'
     return render(request, template_name, context)
 
+
+def get_cidades(request, uf):
+    data = json.loads(open(os.path.join(settings.BASE_DIR, 'trabalhocom/accounts/estado-cidade.json')).read())
+
+    context = {
+        'cidades': []
+    }
+
+    for i in range(len(data)):
+        if data[i]['sigla'] == uf:
+            cidades = data[i]['cidades']
+
+    context['cidades'].append('<option value="" selected>Selecione uma cidade...</option>')
+    for cidade in cidades:
+        context['cidades'].append("<option value='"+cidade+"'>"+cidade+"</option>")
+
+    return JsonResponse(context)
 
 def popula_categoria():
     CategoriaServico.objects.create(nome='Agronomo')
