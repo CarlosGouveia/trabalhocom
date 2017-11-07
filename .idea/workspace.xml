@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6deab47f-75bd-4b06-851b-55c6af3ab04e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trabalhocom/accounts/forms.py" afterPath="$PROJECT_DIR$/trabalhocom/accounts/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trabalhocom/accounts/templates/accounts/register.html" afterPath="$PROJECT_DIR$/trabalhocom/accounts/templates/accounts/register.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,6 +10,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -37,7 +38,28 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="trabalhocom" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trabalhocom" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trabalhocom" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trabalhocom" type="462c0819:PsiDirectoryNode" />
+              <item name="trabalhocom" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trabalhocom" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trabalhocom" type="462c0819:PsiDirectoryNode" />
+              <item name="trabalhocom" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
@@ -128,5 +150,15 @@
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/trabalhocom/core/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
