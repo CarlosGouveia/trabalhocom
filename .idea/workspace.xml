@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f8c6dfa-c92d-418b-bba5-23314954de99" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bd_t.sqlite3" afterPath="$PROJECT_DIR$/bd_t.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trabalhocom/core/templates/home.html" afterPath="$PROJECT_DIR$/trabalhocom/core/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trabalhocom/services/models.py" afterPath="$PROJECT_DIR$/trabalhocom/services/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trabalhocom/settings.py" afterPath="$PROJECT_DIR$/trabalhocom/settings.py" />
-    </list>
+    <list default="true" id="8f8c6dfa-c92d-418b-bba5-23314954de99" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +57,7 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/trabalhocom/services/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
+            <state relative-caret-position="56">
               <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
               <folding />
             </state>
@@ -699,7 +693,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/trabalhocom/services/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
+        <state relative-caret-position="56">
           <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
           <folding />
         </state>
