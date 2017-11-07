@@ -7,6 +7,10 @@ class CategoriaServico(models.Model):
 
     nome = models.CharField('Nome categoria', max_length=100, default=True)
 
+    def __str__(self):
+        return self.nome
+
+
 class Service(models.Model):
 
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
