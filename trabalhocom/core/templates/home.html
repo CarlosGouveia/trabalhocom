@@ -28,6 +28,11 @@
                     </li>
 
                     {% if user.is_authenticated %}
+                        {% if user.is_superuser %}
+                            <li class="nav-item">
+                                <a class="nav-link js-scroll-trigger" href="/admin">Admin</a>
+                            </li>
+                        {% endif %}
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="{% url 'accounts:logout' %}">Sair</a>
                         </li>
@@ -228,6 +233,20 @@
 
     <!-- Contact -->
     <section id="contact">
+        {% if messages %}
+            <div class="row">
+
+                {% for message in messages %}
+                    <div class="col-lg-12 text-center">
+                        <div class="alert alert-success alert-dismissible">
+                            <button class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button>
+                            {{ message }}
+                        </div>
+                    </div>
+
+                {% endfor %}
+            </div>
+        {% endif %}
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">

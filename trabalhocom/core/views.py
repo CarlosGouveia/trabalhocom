@@ -18,7 +18,8 @@ def details(request):
             form.send_mail()
             form = contato_form()
             messages.success(request, 'Mensagem enviada com sucesso')
-            return redirect('/home/')
+            messages_contact = messages
+            return redirect('/home/#contact')
     else:
         form = contato_form()
     context['form'] = form
