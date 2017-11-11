@@ -118,7 +118,14 @@
                         </div>
                         <div class="col-md-8">
                             <h6>
-                               {{ serv.tempo_experiencia }} {{ serv.unid_tempo }}
+                               {{ serv.tempo_experiencia }}
+                                {% if serv.unid_tempo == 'ME' %}
+                                    <label>Mês(es)</label>
+
+                                {% elif serv.unid_tempo == 'AN' %}
+                                    <label>Ano(s)</label>
+                                {% endif %}
+{#                                {{ serv.unid_tempo }}#}
                             </h6>
                         </div>
                     </div>
@@ -142,7 +149,15 @@
                         </div>
                         <div class="col-md-8">
                             <h6>
-                               {{ serv.valor }} por {{ serv.valor_servico }}
+                               {{ serv.valor }} por
+                                {% if serv.valor_servico == 'HO' %}
+                                    <label>Hora</label>
+                                {% elif serv.valor_servico == 'DI' %}
+                                    <label>Dia</label>
+                                 {% elif serv.valor_servico == 'SE' %}
+                                    <label>Serviço</label>
+                                {% endif %}
+{#                                {{ serv.valor_servico }}#}
                             </h6>
                         </div>
                     </div>

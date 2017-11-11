@@ -11,7 +11,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     username = models.CharField('Nome completo', max_length=100, default=True)
     telefone = models.CharField('Telefone', max_length=15, default=True)
     cpf = models.CharField('CPF', max_length=14, unique=True, default=True)
-    rg = models.CharField('RG', max_length=10, unique=True, default=True)
+    rg = models.CharField('RG', max_length=13, unique=True, default=True)
     dt_nasc = models.CharField('Data de Nascimento', max_length=10, default=True)
     sexo = models.CharField('Sexo', max_length=1, null=False, default=True)
     rua = models.CharField(
