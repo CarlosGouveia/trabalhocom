@@ -9,6 +9,7 @@ from django.http import JsonResponse
 from django.conf import settings
 from .models import Service, CategoriaServico
 from trabalhocom.services.forms import login_form
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 User = get_user_model()
 
@@ -36,33 +37,27 @@ def myservices(request):
     return render(request, template_name, context)
 
 # LISTA TODOS OS SERVICOS DO USUARIO QUE ESTÁ LOGADO COM A OPÇÃO DE EDITAR
-@login_required
-def myservices_list_update(request):
-    servicos = Service.objects.filter(usuario_id=request.user)
-    template_name = 'myservices_list_update.html'
-    context = {'servicos': servicos}
-    return render(request, template_name, context)
 
 # MOSTRA OS DETALHES DO SERVIÇO SELECIONADO
-@login_required
-def detail_search(request, pk):
-    servico = get_object_or_404(Service, pk=pk)
-    context = {}
-    if request.method == 'POST':
-        form = DetalhaServicoForm(request.POST, instance=servico)
-        if form.is_valid():
-            servico = form.save(commit=False)
-            servico.usuario = request.user
-            servico.save()
-            form = DetalhaServicoForm(instance=servico)
-            context['success'] = True
-            messages.success(request, 'Serviço selecionado!')
-            return redirect('services:detail_search')
-    else:
-        form = AtualizarServicoForm(instance=servico)
-    context['form'] = form
-    template_name = 'detail_search.html'
-    return render(request, template_name, context)
+# @login_required
+# def detail_search(request, pk):
+#     servico = get_object_or_404(Service, pk=pk)
+#     context = {}
+#     if request.method == 'POST':
+#         form = DetalhaServicoForm(request.POST, instance=servico)
+#         if form.is_valid():
+#             servico = form.save(commit=False)
+#             servico.usuario = request.user
+#             servico.save()
+#             form = DetalhaServicoForm(instance=servico)
+#             context['success'] = True
+#             messages.success(request, 'Serviço selecionado!')
+#             return redirect('services:detail_search')
+#     else:
+#         form = AtualizarServicoForm(instance=servico)
+#     context['form'] = form
+#     template_name = 'detail_search.html'
+#     return render(request, template_name, context)
 
 # LISTA TODOS OS SERVICOS DE TODOS OS USUARIOS
 def search_All_services(request):
@@ -137,6 +132,17 @@ def search_All_services(request):
     else:
         servicos = Service.objects.all()
 
+    # PAGINAÇÃO
+    paginator = Paginator(servicos, 1)
+    page = request.GET.get('page')
+    try:
+        servicos = paginator.page(page)
+    except PageNotAnInteger:
+        servicos = paginator.page(1)
+    except EmptyPage:
+        servicos = paginator.page(paginator.num_pages)
+    #FIM PAGINAÇÃO
+
     template_name = 'search_ALL_services.html'
     context = {
         'servicos': servicos,
@@ -155,7 +161,7 @@ def search_All_services(request):
 # REGISTRO DE SERVIÇOS
 @login_required
 def register_services(request):
-    popula_categoria()
+    # popula_categoria()
     categoria = CategoriaServico.objects.all()
     template_name = 'register_services.html'
     context = {}
@@ -177,6 +183,7 @@ def register_services(request):
 
 @login_required
 def mais_detalhes(request, pk):
+    print('entrou tbm')
     servico = Service.objects.filter(pk=pk)
 
     context = {
@@ -185,11 +192,24 @@ def mais_detalhes(request, pk):
     template_name = 'mais_detalhes.html'
     return render(request, template_name, context)
 
+@login_required
+def myservices_details(request, pk):
+    servico = Service.objects.filter(pk=pk)
+
+    context = {
+        'servico': servico
+    }
+
+    template_name = 'myservices_details.html'
+    return render(request, template_name, context)
+
 # EDITAR SERVIÇOS
 def edit_services(request, pk):
+    # print('ENTRO AKI CARAI')
     servico = get_object_or_404(Service, pk=pk)
     categoria = CategoriaServico.objects.all()
     context = {}
+
     if request.method == 'POST':
         form = AtualizarServicoForm(request.POST, instance=servico)
         if form.is_valid():
@@ -199,7 +219,7 @@ def edit_services(request, pk):
             # form = AtualizarServicoForm(instance=servico)
             context['success'] = True
             messages.success(request, 'Serviço atualizado com sucesso!')
-            return redirect('services:myservices_list_update')
+            return redirect('services:myservices')
     else:
         form = AtualizarServicoForm(instance=servico)
     context = {
@@ -226,6 +246,13 @@ def get_cidades(request, uf):
         context['cidades'].append("<option value='"+cidade+"'>"+cidade+"</option>")
 
     return JsonResponse(context)
+
+@login_required
+def service_remove(request, pk):
+    servico = get_object_or_404(Service, pk=pk)
+    servico.delete()
+    return redirect('services:myservices')
+
 
 def popula_categoria():
     CategoriaServico.objects.create(nome='Agronomo')

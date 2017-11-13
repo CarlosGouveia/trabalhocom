@@ -4,6 +4,11 @@
     <section>
         <!-- Listar meus serviços-->
         <div class="container">
+            <nav class="breadcrumb">
+                <a class="breadcrumb-item" href="{% url 'core:home' %}">Home</a>
+                <a class="breadcrumb-item" href="{% url 'accounts:dashboard' %}">Meu Painel</a>
+                <a class="breadcrumb-item" href="{% url 'services:myservices' %}">Meus Serviços</a>
+            </nav>
 
             <div class="row justify-content-md-center">
                 <div class="col-md-12 text-center">
@@ -17,7 +22,7 @@
                 <div class="row justify-content-md-center">
                     <div class="col-md-12 text-center">
                         <h4 class="section-subheading">
-                            <a href="#" title="">{{ servico.descricao_servico }}</a>
+                            <a href="{% url 'services:myservices-details' pk=servico.pk %}" title="">{{ servico.descricao_servico }}</a>
                         </h4>
 {#                        {{ servico.descricao_exp|linebreaks }}#}
                     </div>

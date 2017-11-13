@@ -37,8 +37,6 @@
                             <a class="nav-link js-scroll-trigger" href="{% url 'accounts:register' %}">Cadastrar</a>
                         </li>
                     {% endif %}
-
-
                 </ul>
             </div>
         </div>
@@ -61,6 +59,7 @@
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-10 ">
                         <label>Email</label>
+                        <label style="color: red">*</label>
                             {{ form.email }}
                         <span class="helptext">{{ form.subject.help_text }}</span>
 
@@ -69,20 +68,24 @@
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-5">
                         <label>Senha</label>
+                        <label style="color: red">*</label>
                             {{ form.password1 }}
                     </div>
                     <div class="form-group col-md-5">
                         <label>Confirme a senha</label>
+                        <label style="color: red">*</label>
                             {{ form.password2 }}
                     </div>
                 </div>
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-5">
                         <label>Nome Completo</label>
+                        <label style="color: red">*</label>
                             {{ form.username }}
                     </div>
                     <div class="form-group col-md-5">
                         <label>Sexo</label>
+                        <label style="color: red">*</label>
                         <select class="form-control" name="sexo">
                             <option value="" selected>Selecione o sexo...</option>
                             <option value="M">Masculino</option>
@@ -94,10 +97,12 @@
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-5">
                         <label>CPF</label>
+                        <label style="color: red">*</label>
                             {{ form.cpf }}
                     </div>
                      <div class="form-group col-md-5">
                         <label>RG</label>
+                        <label style="color: red">*</label>
                           {{ form.rg }}
                     </div>
                 </div>
@@ -105,10 +110,12 @@
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-5">
                         <label>Data de Nascimento</label>
+                        <label style="color: red">*</label>
                             {{ form.dt_nasc }}
                     </div>
                      <div class="form-group col-md-5">
                         <label>Telefone</label>
+                        <label style="color: red">*</label>
                           {{ form.telefone }}
                     </div>
                 </div>
@@ -116,6 +123,7 @@
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-5">
                         <label>Estado</label>
+                        <label style="color: red">*</label>
                         <select id="estados" class="form-control" name="estado">
                             <option value="" selected>Selecione um estado...</option>
                             {% for estado in estados %}
@@ -125,6 +133,7 @@
                     </div>
                     <div class="form-group col-md-5">
                         <label>Cidade</label>
+                        <label style="color: red">*</label>
                         <select id="cidades" class="form-control" name="cidade" disabled></select>
                     </div>
                 </div>
@@ -132,17 +141,17 @@
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-3">
                         <label>Bairro</label>
-{#                        <input type="text" name="" class="form-control">#}
+                        <label style="color: red">*</label>
                             {{ form.bairro }}
                     </div>
                     <div class="form-group col-md-4">
                         <label>Rua</label>
-{#                        <input type="text" name="" class="form-control">#}
+                        <label style="color: red">*</label>
                             {{ form.rua }}
                     </div>
                      <div class="form-group col-md-3">
                         <label>Número</label>
-{#                        <input type="text" name="" class="form-control">#}
+                        <label style="color: red">*</label>
                             {{ form.numero }}
                     </div>
                 </div>
