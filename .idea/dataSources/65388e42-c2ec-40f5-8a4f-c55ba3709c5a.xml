@@ -117,7 +117,7 @@
     </column>
     <column id="39" parent="7" name="rg">
       <Position>8</Position>
-      <DataType>varchar(10)|0</DataType>
+      <DataType>varchar(13)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="40" parent="7" name="dt_nasc">

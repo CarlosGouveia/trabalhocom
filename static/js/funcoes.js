@@ -31,15 +31,15 @@ $('[name=telefone_contato]').mask('(00) 0000-00009', opcoes);
 
 // Mascara para RG
 
-var maskrg = {onKeyPress: function(rg, e, field, maskrg){
-    mascara ='00.000.000';
-    $('[name=rg]').mask(mascara, maskrg);
-}};
-$('[name=rg]').mask('00.000.000', maskrg);
+// var maskrg = {onKeyPress: function(rg, e, field, maskrg){
+//     mascara ='00.000.000';
+//     $('[name=rg]').mask(mascara, maskrg);
+// }};
+// $('[name=rg]').mask('00.000.000', maskrg);
 
 // fim
 
-// Mascara para RG
+// Mascara para Data de Nascimento
 
 var opcoes = {onKeyPress: function(dt_nasc, e, field, opcoes){
     mascara ='00/00/0000';
@@ -56,5 +56,21 @@ var opcoes = {onKeyPress: function(valor, e, field, opcoes){
     $('[name=valoor]').mask(mascara, opcoes);
 }};
 $('[name=valoor]').mask('00,00', opcoes);
+
+// fim
+
+
+// Mascara para RG
+
+var maskrg= {onKeyPress: function(rg, e, field, maskrg){
+    if (rg.length > 12)
+        mascara = '00.000.000-00';
+    else if (rg.length > 11)
+        mascara = '00.000.000-09';
+    else
+        mascara = '00.000.000-99';
+    $('[name=rg]').mask(mascara, maskrg);
+}};
+$('[name=rg]').mask('00.000.000-99', maskrg);
 
 // fim

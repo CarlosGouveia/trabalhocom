@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="8f8c6dfa-c92d-418b-bba5-23314954de99" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trabalhocom/services/templates/myservices_details.html" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/cba05658-e2c3-4572-a001-ad8b2925caca/_metadata_/metadata" afterPath="" />
@@ -28,6 +29,20 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trabalhocom/services/templates/register_services.html" afterPath="$PROJECT_DIR$/trabalhocom/services/templates/register_services.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trabalhocom/services/templates/search_ALL_services.html" afterPath="$PROJECT_DIR$/trabalhocom/services/templates/search_ALL_services.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trabalhocom/services/urls.py" afterPath="$PROJECT_DIR$/trabalhocom/services/urls.py" />
+=======
+    <list default="true" id="e4ec5559-94cd-4c2f-aae3-d6ed87fd6b1c" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bd_t.sqlite3" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/65388e42-c2ec-40f5-8a4f-c55ba3709c5a/_metadata_/metadata" afterPath="$PROJECT_DIR$/.idea/dataSources/65388e42-c2ec-40f5-8a4f-c55ba3709c5a/_metadata_/metadata" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/65388e42-c2ec-40f5-8a4f-c55ba3709c5a/_metadata_/metadata.values.at" afterPath="$PROJECT_DIR$/.idea/dataSources/65388e42-c2ec-40f5-8a4f-c55ba3709c5a/_metadata_/metadata.values.at" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/65388e42-c2ec-40f5-8a4f-c55ba3709c5a.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/65388e42-c2ec-40f5-8a4f-c55ba3709c5a.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/funcoes.js" afterPath="$PROJECT_DIR$/static/js/funcoes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trabalhocom/accounts/forms.py" afterPath="$PROJECT_DIR$/trabalhocom/accounts/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trabalhocom/accounts/models.py" afterPath="$PROJECT_DIR$/trabalhocom/accounts/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trabalhocom/core/templates/base.html" afterPath="$PROJECT_DIR$/trabalhocom/core/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trabalhocom/services/templates/mais_detalhes.html" afterPath="$PROJECT_DIR$/trabalhocom/services/templates/mais_detalhes.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trabalhocom/services/templates/register_services.html" afterPath="$PROJECT_DIR$/trabalhocom/services/templates/register_services.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trabalhocom/services/templates/search_ALL_services.html" afterPath="$PROJECT_DIR$/trabalhocom/services/templates/search_ALL_services.html" />
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trabalhocom/services/views.py" afterPath="$PROJECT_DIR$/trabalhocom/services/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,6 +73,7 @@
     </expand>
     <select />
   </component>
+<<<<<<< HEAD
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
@@ -78,11 +94,21 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="855">
               <caret line="57" column="24" lean-forward="false" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+=======
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="agency.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/css/agency.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="9405">
+              <caret line="627" column="0" lean-forward="false" selection-start-line="627" selection-start-column="0" selection-end-line="627" selection-end-column="0" />
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="myservices_details.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trabalhocom/services/templates/myservices_details.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -108,6 +134,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2805">
               <caret line="187" column="90" lean-forward="false" selection-start-line="187" selection-start-column="77" selection-end-line="187" selection-end-column="90" />
+=======
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trabalhocom/core/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1350">
+              <caret line="90" column="28" lean-forward="false" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
               <folding />
             </state>
           </provider>
@@ -116,6 +149,7 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/trabalhocom/services/views.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="-2741">
               <caret line="40" column="43" lean-forward="false" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
               <folding />
@@ -128,36 +162,69 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
               <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+=======
+            <state relative-caret-position="27">
+              <caret line="157" column="5" lean-forward="false" selection-start-line="157" selection-start-column="5" selection-end-line="157" selection-end-column="5" />
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="detail_search.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trabalhocom/services/templates/detail_search.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="585">
               <caret line="39" column="16" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="39" selection-end-column="16" />
+=======
+      <file leaf-file-name="register_services.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trabalhocom/services/templates/register_services.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="870">
+              <caret line="58" column="30" lean-forward="false" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="register_services.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trabalhocom/services/templates/register_services.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
               <caret line="9" column="105" lean-forward="false" selection-start-line="9" selection-start-column="105" selection-end-line="9" selection-end-column="105" />
               <folding />
+=======
+      <file leaf-file-name="bootstrap-select.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/bootstrap-select.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="27810">
+              <caret line="1859" column="4" lean-forward="false" selection-start-line="1859" selection-start-column="4" selection-end-line="1859" selection-end-column="4" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <marker date="1510330171011" expanded="true" signature="19822:19829" ph="×" />
+                <marker date="1510330171011" expanded="true" signature="21770:21776" ph=" " />
+              </folding>
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="search_services_filter.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trabalhocom/services/templates/search_services_filter.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+      <file leaf-file-name="bootstrap-select.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/css/bootstrap-select.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5385">
+              <caret line="359" column="1" lean-forward="false" selection-start-line="359" selection-start-column="1" selection-end-line="359" selection-end-column="1" />
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
               <folding />
             </state>
           </provider>
@@ -165,6 +232,7 @@
       </file>
     </leaf>
   </component>
+<<<<<<< HEAD
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -175,6 +243,11 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>myservices_list_update</find>
+=======
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>url</find>
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -183,6 +256,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/trabalhocom/services/forms.py" />
         <option value="$PROJECT_DIR$/trabalhocom/core/views.py" />
         <option value="$PROJECT_DIR$/trabalhocom/services/admin.py" />
@@ -211,6 +285,21 @@
         <option value="$PROJECT_DIR$/trabalhocom/services/templates/detail_search.html" />
         <option value="$PROJECT_DIR$/trabalhocom/services/views.py" />
         <option value="$PROJECT_DIR$/trabalhocom/services/urls.py" />
+=======
+        <option value="$PROJECT_DIR$/static/js/funcoes.js" />
+        <option value="$PROJECT_DIR$/trabalhocom/accounts/templates/accounts/register.html" />
+        <option value="$PROJECT_DIR$/trabalhocom/accounts/models.py" />
+        <option value="$PROJECT_DIR$/trabalhocom/accounts/forms.py" />
+        <option value="$PROJECT_DIR$/trabalhocom/core/templates/base.html" />
+        <option value="$PROJECT_DIR$/trabalhocom/services/templates/search_ALL_services.html" />
+        <option value="$PROJECT_DIR$/trabalhocom/services/templates/mais_detalhes.html" />
+        <option value="$PROJECT_DIR$/static/css/agency.css" />
+        <option value="$PROJECT_DIR$/static/js/agency.js" />
+        <option value="$PROJECT_DIR$/static/js/bootstrap-select.js" />
+        <option value="$PROJECT_DIR$/static/css/bootstrap-select.css" />
+        <option value="$PROJECT_DIR$/trabalhocom/services/templates/register_services.html" />
+        <option value="$PROJECT_DIR$/trabalhocom/services/views.py" />
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
       </list>
     </option>
   </component>
@@ -222,7 +311,11 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-1" />
+<<<<<<< HEAD
     <option name="width" value="1368" />
+=======
+    <option name="width" value="684" />
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
     <option name="height" value="741" />
   </component>
   <component name="ProjectView">
@@ -240,7 +333,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="Scope" />
+=======
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -254,6 +350,7 @@
               <item name="trabalhocom" type="462c0819:PsiDirectoryNode" />
               <item name="trabalhocom" type="462c0819:PsiDirectoryNode" />
             </path>
+<<<<<<< HEAD
             <path>
               <item name="trabalhocom" type="b2602c69:ProjectViewProjectNode" />
               <item name="trabalhocom" type="462c0819:PsiDirectoryNode" />
@@ -315,16 +412,31 @@
               <item name="services" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
+=======
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
+=======
+      <pane id="Scope" />
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Sqlite (Xerial)" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/img" />
+    </key>
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -368,16 +480,25 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="8f8c6dfa-c92d-418b-bba5-23314954de99" name="Default" comment="" />
       <created>1509553181127</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1509553181127</updated>
+=======
+      <changelist id="e4ec5559-94cd-4c2f-aae3-d6ed87fd6b1c" name="Default" comment="" />
+      <created>1510267570863</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1510267570863</updated>
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="741" extended-state="6" />
+<<<<<<< HEAD
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3121212" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -391,6 +512,22 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+=======
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26136363" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33873582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -403,9 +540,12 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+<<<<<<< HEAD
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.html" />
   </component>
+=======
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -414,13 +554,18 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/65388e42-c2ec-40f5-8a4f-c55ba3709c5a/console.sql">
+=======
+    <entry file="file://$PROJECT_DIR$/static/css/bootstrap-select.css">
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="das://table:/cd196256/65388e42-c2ec-40f5-8a4f-c55ba3709c5a/main.services_categoriaservico">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -436,12 +581,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/trabalhocom/core/templates/contato_email.html">
+=======
+    <entry file="file://$PROJECT_DIR$/static/css/agency.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/accounts/templates/accounts/dashboard.html">
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/trabalhocom/core/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -464,12 +620,30 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/trabalhocom/core/admin.py">
+=======
+    <entry file="file://$PROJECT_DIR$/trabalhocom/accounts/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="13" column="47" lean-forward="false" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/accounts/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1140">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/core/views.py">
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/trabalhocom/services/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -494,10 +668,37 @@
     <entry file="file://$PROJECT_DIR$/trabalhocom/accounts/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
+=======
+    <entry file="file://$PROJECT_DIR$/trabalhocom/services/templates/detail_search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="19" column="66" lean-forward="false" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/accounts/templates/accounts/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120">
+          <caret line="99" column="30" lean-forward="false" selection-start-line="99" selection-start-column="30" selection-end-line="99" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/core/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1033">
+          <caret line="90" column="54" lean-forward="true" selection-start-line="90" selection-start-column="35" selection-end-line="90" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/services/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/trabalhocom/accounts/migrations/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -536,12 +737,52 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/trabalhocom/core/urls.py">
+=======
+    <entry file="file://$PROJECT_DIR$/trabalhocom/services/templates/register_services.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="113" column="61" lean-forward="false" selection-start-line="113" selection-start-column="55" selection-end-line="113" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="23" column="56" lean-forward="false" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/services/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="12" column="53" lean-forward="false" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/services/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2775">
+          <caret line="185" column="14" lean-forward="false" selection-start-line="185" selection-start-column="14" selection-end-line="185" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/services/templates/mais_detalhes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1815">
+          <caret line="121" column="60" lean-forward="false" selection-start-line="121" selection-start-column="60" selection-end-line="121" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/services/templates/search_ALL_services.html">
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/trabalhocom/accounts/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -592,12 +833,67 @@
       </provider>
     </entry>
     <entry file="das://table:/cd196256/65388e42-c2ec-40f5-8a4f-c55ba3709c5a/main.services_service">
+=======
+    <entry file="file://$PROJECT_DIR$/trabalhocom/services/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="12" column="53" lean-forward="false" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/services/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2775">
+          <caret line="185" column="14" lean-forward="true" selection-start-line="185" selection-start-column="14" selection-end-line="185" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/services/templates/search_ALL_services.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/accounts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/services/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2205">
+          <caret line="157" column="5" lean-forward="false" selection-start-line="157" selection-start-column="5" selection-end-line="157" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/accounts/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="13" column="47" lean-forward="false" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/accounts/templates/accounts/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1485">
+          <caret line="99" column="30" lean-forward="false" selection-start-line="99" selection-start-column="30" selection-end-line="99" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/f0120455/65388e42-c2ec-40f5-8a4f-c55ba3709c5a/main.accounts_user">
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/trabalhocom/services/templates/myservices_list_update.html" />
     <entry file="das://table:/cd196256/65388e42-c2ec-40f5-8a4f-c55ba3709c5a/main.accounts_user">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -607,12 +903,37 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/trabalhocom/core/utils.py">
+=======
+    <entry file="file://$PROJECT_DIR$/trabalhocom/accounts/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="24" column="81" lean-forward="false" selection-start-line="24" selection-start-column="81" selection-end-line="24" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/core/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/accounts/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/services/admin.py">
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/trabalhocom/services/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -635,12 +956,44 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/trabalhocom/accounts/templates/accounts/password_reset_mail.html">
+=======
+    <entry file="file://$PROJECT_DIR$/static/js/jquery.mask.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/vendor/jquery/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-135">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/funcoes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="70" column="31" lean-forward="false" selection-start-line="70" selection-start-column="31" selection-end-line="70" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/f0120455/65388e42-c2ec-40f5-8a4f-c55ba3709c5a/main.accounts_user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/accounts/views.py">
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -704,11 +1057,81 @@
         <state relative-caret-position="150">
           <caret line="10" column="68" lean-forward="false" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/trabalhocom/accounts/templates/accounts/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/accounts/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="13" column="47" lean-forward="false" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/accounts/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1140">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/core/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/services/templates/detail_search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="19" column="66" lean-forward="false" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/accounts/templates/accounts/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120">
+          <caret line="99" column="30" lean-forward="false" selection-start-line="99" selection-start-column="30" selection-end-line="99" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/services/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="23" column="56" lean-forward="false" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/services/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="53" lean-forward="false" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/services/templates/search_ALL_services.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1035">
+          <caret line="45" column="10" lean-forward="false" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/trabalhocom/services/templates/mais_detalhes.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="855">
           <caret line="57" column="24" lean-forward="false" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
           <folding />
@@ -727,38 +1150,94 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+        <state relative-caret-position="210">
+          <caret line="152" column="56" lean-forward="false" selection-start-line="152" selection-start-column="56" selection-end-line="152" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/agency.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trabalhocom/core/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1350">
+          <caret line="90" column="28" lean-forward="false" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/trabalhocom/services/templates/search_ALL_services.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2805">
           <caret line="187" column="90" lean-forward="false" selection-start-line="187" selection-start-column="77" selection-end-line="187" selection-end-column="90" />
+=======
+    <entry file="file://$PROJECT_DIR$/static/css/agency.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9405">
+          <caret line="627" column="0" lean-forward="false" selection-start-line="627" selection-start-column="0" selection-end-line="627" selection-end-column="0" />
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/trabalhocom/services/templates/detail_search.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="39" column="16" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="39" selection-end-column="16" />
+=======
+    <entry file="file://$PROJECT_DIR$/static/js/bootstrap-select.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27810">
+          <caret line="1859" column="4" lean-forward="false" selection-start-line="1859" selection-start-column="4" selection-end-line="1859" selection-end-column="4" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1510330171011" expanded="true" signature="19822:19829" ph="×" />
+            <marker date="1510330171011" expanded="true" signature="21770:21776" ph=" " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/bootstrap-select.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5385">
+          <caret line="359" column="1" lean-forward="false" selection-start-line="359" selection-start-column="1" selection-end-line="359" selection-end-column="1" />
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/trabalhocom/services/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+=======
+    <entry file="file://$PROJECT_DIR$/trabalhocom/services/templates/register_services.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="58" column="30" lean-forward="false" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/trabalhocom/services/views.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="-2741">
           <caret line="40" column="43" lean-forward="false" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
+=======
+        <state relative-caret-position="27">
+          <caret line="157" column="5" lean-forward="false" selection-start-line="157" selection-start-column="5" selection-end-line="157" selection-end-column="5" />
+>>>>>>> 29f2d055d70f20e55e1e3acc6a05ca52d0f6e916
           <folding />
         </state>
       </provider>

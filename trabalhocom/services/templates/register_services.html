@@ -52,8 +52,8 @@
 {#                                {{ form.descricao_servico }}#}
                             </div>
                             <div class="form-group col-md-6">
-                                <select class="form-control" name="categoria">
-                                    <option value="" selected>Selecione ...</option>
+                                <select class="form-control selectpicker" data-live-search="true" name="categoria" title="Selecione ...">
+{#                                    <option value="" selected>Selecione ...</option>#}
                                         {% for cat in categoria %}
                                             <option value="{{ cat.id }}">{{ cat.nome }}</option>
                                         {% endfor %}
