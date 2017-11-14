@@ -133,7 +133,7 @@ def search_All_services(request):
         servicos = Service.objects.all()
 
     # PAGINAÇÃO
-    paginator = Paginator(servicos, 1)
+    paginator = Paginator(servicos, 5)
     page = request.GET.get('page')
     try:
         servicos = paginator.page(page)

@@ -64,7 +64,8 @@
                             <a class="breadcrumb-item" href="{% url 'core:home' %}">Home</a>
                             <a class="breadcrumb-item" href="{% url 'accounts:dashboard' %}">Meu Painel</a>
                             <a class="breadcrumb-item" href="{% url 'services:myservices' %}">Meus Serviços</a>
-                            <a class="breadcrumb-item" href="{% url 'services:myservices-details' pk=serv.pk %}">Mais Detalhes</a>
+                            <a class="breadcrumb-item" href="{% url 'services:myservices-details' pk=serv.pk %}">Mais
+                                Detalhes</a>
                         </nav>
                         <div class="row">
                             <div class="col-lg-12 text-center">
@@ -107,7 +108,14 @@
                                         </div>
                                         <div class="col-md-7">
                                             <h6>
-                                                {{ serv.tempo_experiencia }} {{ serv.unid_tempo }}
+                                                {{ serv.tempo_experiencia }}
+                                                {% if serv.unid_tempo == 'ME' %}
+                                                    <label>Mês(es)</label>
+
+                                                {% elif serv.unid_tempo == 'AN' %}
+                                                    <label>Ano(s)</label>
+                                                {% endif %}
+                                                {#                                {{ serv.unid_tempo }}#}
                                             </h6>
                                         </div>
                                     </div>
@@ -131,7 +139,15 @@
                                         </div>
                                         <div class="col-md-7">
                                             <h6>
-                                                {{ serv.valor }} por {{ serv.valor_servico }}
+                                                {{ serv.valor }} por
+                                                {% if serv.valor_servico == 'HO' %}
+                                                    <label>Hora</label>
+                                                {% elif serv.valor_servico == 'DI' %}
+                                                    <label>Dia</label>
+                                                {% elif serv.valor_servico == 'SE' %}
+                                                    <label>Serviço</label>
+                                                {% endif %}
+                                                {#                                {{ serv.valor_servico }}#}
                                             </h6>
                                         </div>
                                     </div>
@@ -188,7 +204,8 @@
                                     <p>Deseja excluir esse serviço?</p>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar
+                                    </button>
                                     <a href="{% url 'services:service_remove' pk=serv.pk %}">
                                         <button type="button" class="btn btn-primary">Excluir</button>
                                     </a>
