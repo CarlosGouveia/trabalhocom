@@ -4,6 +4,11 @@
     <section>
         <!-- formulario de cadastro de serviços-->
         <div class="container">
+            <nav class="breadcrumb">
+                <a class="breadcrumb-item" href="{% url 'core:home' %}">Home</a>
+                <a class="breadcrumb-item" href="{% url 'accounts:dashboard' %}">Meu Painel</a>
+                <a class="breadcrumb-item" href="{% url 'services:register_services' %}">Cadastro Serviço</a>
+            </nav>
 
             <div class="row text-center">
                 <div class="col-md-12">

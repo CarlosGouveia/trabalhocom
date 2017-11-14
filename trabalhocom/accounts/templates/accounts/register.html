@@ -37,8 +37,6 @@
                             <a class="nav-link js-scroll-trigger" href="{% url 'accounts:register' %}">Cadastrar</a>
                         </li>
                     {% endif %}
-
-
                 </ul>
             </div>
         </div>
@@ -144,19 +142,16 @@
                     <div class="form-group col-md-3">
                         <label>Bairro</label>
                         <label style="color: red">*</label>
-{#                        <input type="text" name="" class="form-control">#}
                             {{ form.bairro }}
                     </div>
                     <div class="form-group col-md-4">
                         <label>Rua</label>
                         <label style="color: red">*</label>
-{#                        <input type="text" name="" class="form-control">#}
                             {{ form.rua }}
                     </div>
                      <div class="form-group col-md-3">
                         <label>Número</label>
                         <label style="color: red">*</label>
-{#                        <input type="text" name="" class="form-control">#}
                             {{ form.numero }}
                     </div>
                 </div>

@@ -2,8 +2,14 @@
 {% block dashboard_content %}
 
     <section>
-        <!-- formulario de cadastro de serviços-->
+        <!-- formulario para editar serviços-->
         <div class="container">
+            <nav class="breadcrumb">
+                <a class="breadcrumb-item" href="{% url 'core:home' %}">Home</a>
+                <a class="breadcrumb-item" href="{% url 'accounts:dashboard' %}">Meu Painel</a>
+                <a class="breadcrumb-item" href="{% url 'services:myservices' %}">Meus Serviços</a>
+                <a class="breadcrumb-item" href="">Atualizar Serviço</a>
+            </nav>
             <div class="row justify-content-md-center">
                 <div class="col-md-12 text-center">
                     <h2 class="section-heading">Atualizar Serviços</h2>

@@ -44,6 +44,20 @@
             </div>
         </div>
     </nav>
+    {#    {% if messages %}#}
+    {#        <div class="row" style="padding-top: 150px">#}
+    {##}
+    {#            {% for message in messages %}#}
+    {#                <div class="col-lg-12">#}
+    {#                    <div class="alert alert-danger alert-dismissible">#}
+    {#                        <button class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button>#}
+    {#                        {{ message }}#}
+    {#                    </div>#}
+    {#                </div>#}
+    {##}
+    {#            {% endfor %}#}
+    {#        </div>#}
+    {#    {% endif %}#}
 
     <div class="row" style="background-color: white">
         <div class="col-md-3 justify-content-md-center" style="background-color: whitesmoke; padding-top: 150px">
@@ -110,7 +124,8 @@
                         {% for message in messages %}
                             <div class="col-lg-12 text-center">
                                 <div class="alert alert-danger alert-dismissible">
-                                    <button class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button>
+                                    <button class="close" data-dismiss="alert" aria-label="close"><span
+                                            aria-hidden="true">&times;</span></button>
                                     {{ message }}
                                 </div>
                             </div>
@@ -119,6 +134,16 @@
                     </div>
                 {% endif %}
                 <div class="container">
+                    <nav class="breadcrumb">
+                        <a class="breadcrumb-item" href="{% url 'core:home' %}">Home</a>
+                        {% if user.is_authenticated %}
+                            <a class="breadcrumb-item" href="{% url 'accounts:dashboard' %}">Meu Painel</a>
+                            <a class="breadcrumb-item" href="{% url 'services:search-ALL-services' %}">Lista Serviços</a>
+                        {% else %}
+                            <a class="breadcrumb-item" href="{% url 'services:search-ALL-services' %}">Lista Srviços</a>
+                        {% endif %}
+                    </nav>
+
                     <div class="row justify-content-md-center">
                         <div class="col-md-12 text-center">
                             <h2 class="section-heading">Serviços Listados</h2>
@@ -159,9 +184,11 @@
 
                             <div class="col-md-2 justify-content-md-center" style="background-color: white">
                                 {% if user.is_authenticated %}
-                                    <a class="btn btn-link js-scroll-trigger" href="{% url 'services:mais_detalhes' pk=servico.pk %}">Mais detalhes</a>
+                                    <a class="btn btn-link js-scroll-trigger"
+                                       href="{% url 'services:mais_detalhes' pk=servico.pk %}">Mais detalhes</a>
                                 {% else %}
-                                    <a class="btn btn-link js-scroll-trigger" href="" data-toggle="modal" data-target="#login" >Mais detalhes</a>
+                                    <a class="btn btn-link js-scroll-trigger" href="" data-toggle="modal"
+                                       data-target="#login">Mais detalhes</a>
                                 {% endif %}
                             </div>
 
@@ -177,7 +204,41 @@
                             </div>
                         </div>
                     {% endfor %}
+
+                    {% if servicos.has_other_pages %}
+                        <nav aria-label="">
+                            <ul class="pagination justify-content-center">
+                                {% if servicos.has_previous %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ servicos.previous_page_number }}">Anterior</a>
+                                    </li>
+{#                                {% else %}#}
+{#                                    <li class="page-item disabled"><span>Anterior</span></li>#}
+                                {% endif %}
+                                {% for i in servicos.paginator.page_range %}
+                                    {% if servicos.number == i %}
+                                        <li class="page-item active">
+                                            <span class="page-link">{{ i }} <span class="sr-only">(current)</span>
+                                            </span>
+                                        </li>
+                                    {% else %}
+                                        <li class="page-item">
+                                            <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                                {% if servicos.has_next %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ servicos.next_page_number }}">Próximo</a>
+                                    </li>
+{#                                {% else %}#}
+{#                                    <li class="page-item disabled"><span>Próximo</span></li>#}
+                                 {% endif %}
+                             </ul>
+                        </nav>
+                    {% endif %}
                 {% endblock %}
+
 
             </section>
         </div>
