@@ -31,7 +31,8 @@ section {
     font-size: 30px;
     margin-top: 0;
     margin-bottom: 15px;
-    font-family: 'Papyrus', fantasy;}
+    /*font-family: 'Papyrus', fantasy;}*/
+  font-family: 'American Typewriter', serif;}
   section h3.section-subheading {
     font-size: 16px;
     font-weight: 400;
@@ -187,14 +188,15 @@ header.masthead {
       line-height: 75px;
       margin-bottom: 50px;
       /*font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
-      /*font-family: 'American Typewriter', serif;*/
-      font-family: 'Papyrus', fantasy;
+      font-family: 'American Typewriter', serif;
+      /*font-family: 'Papyrus', fantasy;*/
       text-transform: uppercase; } }
 
 .service-heading {
   margin: 15px 0;
   text-transform: none;
-  font-family: 'Papyrus', fantasy;}
+  /*font-family: 'Papyrus', fantasy;}*/
+  font-family: 'American Typewriter', serif;}
 
 #portfolio .portfolio-item {
   right: 0;
