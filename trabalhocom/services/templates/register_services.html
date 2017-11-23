@@ -49,17 +49,14 @@
                         <div class="form-row justify-content-md-center">
                             <div class="form-group col-md-3 justify-content-md-start">
                                 <label>Categoria</label>
-{#                                {{ form.descricao_servico }}#}
                             </div>
                             <div class="form-group col-md-6">
                                 <select class="form-control selectpicker" data-live-search="true" name="categoria" title="Selecione ...">
-{#                                    <option value="" selected>Selecione ...</option>#}
                                         {% for cat in categoria %}
                                             <option value="{{ cat.id }}">{{ cat.nome }}</option>
                                         {% endfor %}
                                 </select>
-{#                                <label>Descrição/Serviço</label>#}
-{#                                {{ form.descricao_servico }}#}
+
                             </div>
                         </div>
                     </div>
@@ -106,14 +103,11 @@
                         <div class="form-row justify-content-md-center">
                             <div class="form-group col-md-3 justify-content-md-start">
                                 <label>Tempo/Experiência</label>
-{#                                {{ form.tempo_experiencia }}#}
                             </div>
                             <div class="form-group col-md-3">
-{#                                <label>Tempo/Experiência</label>#}
                                 {{ form.tempo_experiencia }}
                             </div>
                             <div class="form-group col-md-3">
-{#                                <label>Cidade</label>#}
                                 <select class="form-control" name="unid_tempo">
                                     <option value="" selected>Selecione ...</option>
                                     <option value="ME">Mês(es)</option>
@@ -129,19 +123,10 @@
 {#                                {{ form.descricao_exp }}#}
                             </div>
                             <div class="form-group col-md-6">
-{#                                <label>Descrição/Experiência</label>#}
                                 {{ form.descricao_exp }}
                             </div>
                         </div>
                     </div>
-{#                    <div class="form-group col-md-12">#}
-{#                        <div class="form-row justify-content-md-center">#}
-{#                            <div class="form-group col-md-9">#}
-{#                                <label>Valor</label>#}
-{#                                {{ form.valor }}#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
 
                     <div class="form-group col-md-12">
                         <div class="form-row justify-content-md-center">
