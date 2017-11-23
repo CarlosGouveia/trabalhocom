@@ -7,7 +7,7 @@
             <nav class="breadcrumb">
                 <a class="breadcrumb-item" href="{% url 'core:home' %}">Home</a>
                 <a class="breadcrumb-item" href="{% url 'accounts:dashboard' %}">Meu Painel</a>
-                <a class="breadcrumb-item" href="{% url 'services:myservices' %}">Meus Serviços</a>
+                <a class="breadcrumb-item active">Meus Serviços</a>
             </nav>
 
             <div class="row justify-content-md-center">
@@ -24,7 +24,6 @@
                         <h4 class="section-subheading">
                             <a href="{% url 'services:myservices-details' pk=servico.pk %}" title="">{{ servico.descricao_servico }}</a>
                         </h4>
-{#                        {{ servico.descricao_exp|linebreaks }}#}
                     </div>
                 </div>
 
@@ -35,38 +34,6 @@
                     </div>
                 </div>
             {% endfor %}
-
-
-{#            {% for course in courses %}#}
-{#                <div class="pure-g-r content-ribbon">#}
-{#                    <div class="pure-u-1-3">#}
-{#                        <div class="l-box">#}
-{#                            <a href="{{ course.get_absolute_url }}">#}
-{#                                {% if course.image %}#}
-{#                                    <img src="{{ course.image.url }}" alt="{{ course.name }}"/>#}
-{#                                {% else %}#}
-{#                                    <img src="{% static 'img/course-image.png' %}" alt="{{ course.name }}"/>#}
-{#                                {% endif %}#}
-{#                            </a>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                    <div class="pure-u-2-3">#}
-{#                        <div class="l-box">#}
-{#                            <h4 class="content-subhead"><a href="{{ course.get_absolute_url }}" title="">{{ course.name }}</a>#}
-{#                            </h4>#}
-{#                            {{ course.description|linebreaks }}#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-{#            {% empty %}#}
-{#                <div class="pure-g-r content-ribbon">#}
-{#                    <div class="pure-u-1">#}
-{#                        <div class="l-box">#}
-{#                            <p>Nenhum curso está disponível na plataforma</p>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-{#            {% endfor %}#}
 
         </div>
     </section>
