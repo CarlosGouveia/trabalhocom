@@ -5,10 +5,10 @@ from .mail import send_mail_template
 
 class contato_form(forms.Form):
 
-    name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}), max_length=100)
-    email_contato= forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control','placeholder': 'Digite aqui seu email'}))
-    message = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control'}))
-    telefone_contato = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+    username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Digite seu nome completo'}), max_length=100)
+    email_contato= forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control','placeholder': 'Digite seu email'}))
+    message = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Digite aqui sua mensagem'}))
+    assunto = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Digite o assunto da mensagem'}), max_length=40)
 
     # def send_email(self, course):
     #     subject = '[%s] Contato' % course
@@ -21,14 +21,14 @@ class contato_form(forms.Form):
     #     message = message % context
     #     send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [settings.CONTACT_EMAIL])
     class Meta:
-        fields = ['name','email_contato','telefone_contato','message']
+        fields = ['username','email_contato','assunto','message']
 
     def send_mail(self):
-        subject = 'Contato'
+        #subject = 'Contato'
+        subject = self.cleaned_data['assunto']
         context = {
-            'name': self.cleaned_data['name'],
+            'username': self.cleaned_data['username'],
             'email_contato': self.cleaned_data['email_contato'],
-            'telefone_contato': self.cleaned_data['telefone_contato'],
             'message': self.cleaned_data['message'],
         }
         template_name = 'contato_email.html'
