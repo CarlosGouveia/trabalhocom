@@ -64,8 +64,7 @@
                             <a class="breadcrumb-item" href="{% url 'core:home' %}">Home</a>
                             <a class="breadcrumb-item" href="{% url 'accounts:dashboard' %}">Meu Painel</a>
                             <a class="breadcrumb-item" href="{% url 'services:myservices' %}">Meus Serviços</a>
-                            <a class="breadcrumb-item" href="{% url 'services:myservices-details' pk=serv.pk %}">Mais
-                                Detalhes</a>
+                            <a class="breadcrumb-item active">Mais Detalhes</a>
                         </nav>
                         <div class="row">
                             <div class="col-lg-12 text-center">
@@ -77,113 +76,150 @@
                                 <div class="container">
 
                                     <div class="row justify-content-md-center" style="padding-top: 20px">
-                                        <div class="col-md-3">
-                                            <label>
-                                                Descrição/Serviço:
-                                            </label>
+                                        <div class="col-md-5">
+                                            <div class="row">
+                                                <label>
+                                                    Descrição/Serviço:
+                                                </label>
+                                            </div>
                                         </div>
-                                        <div class="col-md-7">
-                                            <h6>
-                                                {{ serv.descricao_servico }}
-                                            </h6>
-                                        </div>
-                                    </div>
-                                    <div class="row justify-content-md-center">
-                                        <div class="col-md-3">
-                                            <label>
-                                                Categoria:
-                                            </label>
-                                        </div>
-                                        <div class="col-md-7">
-                                            <h6>
-                                                {{ serv.categoria.nome }}
-                                            </h6>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <h6>
+                                                    {{ serv.descricao_servico }}
+                                                </h6>
+                                            </div>
                                         </div>
                                     </div>
+                                    <hr size="10" width="98%">
                                     <div class="row justify-content-md-center">
-                                        <div class="col-md-3">
-                                            <label>
-                                                Tempo/Experiência:
-                                            </label>
+                                        <div class="col-md-5">
+                                            <div class="row">
+                                                <label>
+                                                    Categoria:
+                                                </label>
+                                            </div>
                                         </div>
-                                        <div class="col-md-7">
-                                            <h6>
-                                                {{ serv.tempo_experiencia }}
-                                                {% if serv.unid_tempo == 'ME' %}
-                                                    <label>Mês(es)</label>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <h6>
+                                                    {{ serv.categoria.nome }}
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr size="10" width="98%">
+                                    <div class="row justify-content-md-center">
+                                        <div class="col-md-5">
+                                            <div class="row">
+                                                <label>
+                                                    Tempo/Experiência:
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <h6>
+                                                    {{ serv.tempo_experiencia }}
+                                                    {% if serv.unid_tempo == 'ME' %}
+                                                        <label>Mês(es)</label>
 
-                                                {% elif serv.unid_tempo == 'AN' %}
-                                                    <label>Ano(s)</label>
-                                                {% endif %}
-                                                {#                                {{ serv.unid_tempo }}#}
-                                            </h6>
+                                                    {% elif serv.unid_tempo == 'AN' %}
+                                                        <label>Ano(s)</label>
+                                                    {% endif %}
+                                                    {#                                {{ serv.unid_tempo }}#}
+                                                </h6>
+                                            </div>
                                         </div>
                                     </div>
+                                    <hr size="10" width="98%">
+
                                     <div class="row justify-content-md-center">
-                                        <div class="col-md-3">
-                                            <label>
-                                                Descrição/Experiência:
-                                            </label>
+                                        <div class="col-md-5">
+                                            <div class="row">
+                                                <label>
+                                                    Descrição/Experiência:
+                                                </label>
+                                            </div>
                                         </div>
-                                        <div class="col-md-7">
-                                            <h6>
-                                                {{ serv.descricao_exp }}
-                                            </h6>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <h6>
+                                                    {{ serv.descricao_exp }}
+                                                </h6>
+                                            </div>
                                         </div>
                                     </div>
+                                    <hr size="10" width="98%">
+
                                     <div class="row justify-content-md-center">
-                                        <div class="col-md-3">
-                                            <label>
-                                                Valor(R$):
-                                            </label>
+                                        <div class="col-md-5">
+                                            <div class="row">
+                                                <label>
+                                                    Valor(R$):
+                                                </label>
+                                            </div>
                                         </div>
-                                        <div class="col-md-7">
-                                            <h6>
-                                                {{ serv.valor }} por
-                                                {% if serv.valor_servico == 'HO' %}
-                                                    <label>Hora</label>
-                                                {% elif serv.valor_servico == 'DI' %}
-                                                    <label>Dia</label>
-                                                {% elif serv.valor_servico == 'SE' %}
-                                                    <label>Serviço</label>
-                                                {% endif %}
-                                                {#                                {{ serv.valor_servico }}#}
-                                            </h6>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <h6>
+                                                    {{ serv.valor }} por
+                                                    {% if serv.valor_servico == 'HO' %}
+                                                        <label>Hora</label>
+                                                    {% elif serv.valor_servico == 'DI' %}
+                                                        <label>Dia</label>
+                                                    {% elif serv.valor_servico == 'SE' %}
+                                                        <label>Serviço</label>
+                                                    {% elif serv.valor_servico == 'AC' %}
+                                                        <label>A combinar</label>
+                                                    {% endif %}
+                                                    {#                                {{ serv.valor_servico }}#}
+                                                </h6>
+                                            </div>
                                         </div>
                                     </div>
+                                    <hr size="10" width="98%">
+
                                     <div class="row justify-content-md-center">
-                                        <div class="col-md-3">
-                                            <label>
-                                                Contato:
-                                            </label>
+                                        <div class="col-md-5">
+                                            <div class="row">
+                                                <label>
+                                                    Contato:
+                                                </label>
+                                            </div>
                                         </div>
-                                        <div class="col-md-7">
-                                            <h6>
-                                                {{ serv.usuario.telefone }}
-                                            </h6>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <h6>
+                                                    {{ serv.usuario.telefone }}
+                                                </h6>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <hr size="10" width="98%">
+
                         <footer>
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-6">
+                                        <br>
+                                        <ul class="list-inline social-buttons">
+                                            <li class="list-inline-item ">
+                                                <a href="{% url 'services:edit_services' pk=serv.pk %}">
+                                                    <i class="fa fa-edit" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="" data-toggle="modal" data-target="#confirma_exclusao">
+                                                    <i class="fa fa-remove"></i>
+                                                </a>
+                                            </li>
 
-                            <div class="row justify-content-md-center">
-                                <div class="col-md-2">
-                                    <br>
-                                    <ul class="list-inline social-buttons">
-                                        <li class="list-inline-item ">
-                                            <a href="{% url 'services:edit_services' pk=serv.pk %}">
-                                                <i class="fa fa-edit" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="" data-toggle="modal" data-target="#confirma_exclusao">
-                                                <i class="fa fa-remove"></i>
-                                            </a>
-                                        </li>
-
-                                    </ul>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </footer>
